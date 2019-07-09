@@ -73,20 +73,84 @@
 .main-collapsible {
   &--wrap {
     position: relative;
-    display: flex;
-    flex-direction: column;
+    display: block;
     grid-column: span 2;
 
     @media (min-width: 984px) {
       grid-column: span 8;
-      padding-top: 287px;
     }
+  }
+
+  &--wrap-inner {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 984px) {
+      padding-top: 80px;
+      padding-bottom: 170px;
+    }
+  }
+
+  &--desc-wrap {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    grid-column: span 2;
+
+    @media (min-width: 984px) {
+      grid-column: span 8;
+      padding-top: 200px;
+    }
+  }
+
+  &--desc-arrow {
+    position: relative;
+    width: 40%;
+    padding-right: 36px;
+
+    svg {
+      position: relative;
+      display: block;
+      width: 100%;
+
+      &.animate path {
+        animation: draw 1s;
+        animation-fill-mode: forwards;
+      }
+
+      &.animateReverse path {
+        animation: drawReverse 1s;
+        animation-fill-mode: forwards;
+      }
+    }
+
+    path {
+      stroke-dasharray: 518;
+      stroke-dashoffset: 518;
+    }
+  }
+
+  &--desc-text {
+    position: relative;
+    width: 60%;
+    font-family: Editorial Grotesk ;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    color: #FFFFFF;
+    opacity: 0;
+    transition: all 1s linear;
   }
 
   &--item {
     position: relative;
     display: block;
-    padding-bottom: 30px;
+    padding-bottom: 15px;
+
+    @media (min-width: 984px) {
+      padding-bottom: 30px;
+    }
 
     &:nth-of-type(1) {
       order: 1;
@@ -123,14 +187,19 @@
     font-family: Editorial Grotesk ;
     font-style: normal;
     font-weight: normal;
-    font-size: 88px;
-    line-height: 88px;
+    font-size: 32px;
+    line-height: 36px;
     letter-spacing: -0.05em;
     text-transform: uppercase;
     font-feature-settings: 'tnum' on, 'onum' on;
     color: #000000;
     cursor: pointer;
     transition: color .1s linear;
+
+    @media (min-width: 984px) {
+      font-size: 88px;
+      line-height: 88px;
+    }
 
     &:hover {
       color: #fff;
@@ -143,7 +212,11 @@
 
   &--item__contentInner {
     border-bottom: 1px solid #fff;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
+
+    @media (min-width: 984px) {
+      margin-bottom: 30px;
+    }
   }
 
   &--artist {
@@ -152,15 +225,38 @@
     font-family: Editorial Grotesk ;
     font-style: normal;
     font-weight: normal;
-    font-size: 36px;
-    line-height: 48px;
+    font-size: 23px;
+    line-height: 36px;
     text-transform: uppercase;
     font-feature-settings: 'tnum' on, 'onum' on;
     color: #fff;
     transition: color .1s linear;
 
+    @media (min-width: 984px) {
+      font-size: 36px;
+      line-height: 48px;
+    }
+
     &:hover {
       color: #000;
     }
+  }
+}
+
+@keyframes draw {
+  from {
+    stroke-dashoffset: 518;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes drawReverse {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 518;
   }
 }

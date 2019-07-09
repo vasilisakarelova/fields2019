@@ -25,6 +25,9 @@ html, body {
 .base-container {
   position: relative;
   width: 100%;
-  display: block;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background: #b0b6bb;
 }

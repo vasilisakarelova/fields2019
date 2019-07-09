@@ -9,7 +9,7 @@ export default (element, to, duration) => {
       var val = Math.easeInOutQuad(currentTime, start, change, duration)
       element.scrollTop = val
       if(currentTime < duration) {
-          setTimeout(animateScroll, increment)
+        setTimeout(animateScroll, increment)
       }
   }
 

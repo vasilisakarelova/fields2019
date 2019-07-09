@@ -3,7 +3,13 @@ import { Helmet } from 'react-helmet'
 import page from 'page'
 
 import Header from './components/Header.jsx'
+import HeaderMob from './components/HeaderMob.jsx'
+import Footer from './components/Footer.jsx'
 const Main = lazy(() => import('./components/Main.jsx'))
+const About = lazy(() => import('./components/About.jsx'))
+const Partners = lazy(() => import('./components/Partners.jsx'))
+const Lineup = lazy(() => import('./components/Lineup.jsx'))
+const Tickets = lazy(() => import('./components/Tickets.jsx'))
 
 class App extends Component {
   state = {
@@ -26,6 +32,34 @@ class App extends Component {
       })
     })
 
+    page('/about', (ctx, next) => {
+      this.setState({
+        route: ctx.path,
+        container: <About />
+      })
+    })
+
+    page('/partners', (ctx, next) => {
+      this.setState({
+        route: ctx.path,
+        container: <Partners />
+      })
+    })
+
+    page('/lineup', (ctx, next) => {
+      this.setState({
+        route: ctx.path,
+        container: <Lineup />
+      })
+    })
+
+    page('/tickets', (ctx, next) => {
+      this.setState({
+        route: ctx.path,
+        container: <Tickets />
+      })
+    })
+
     page()
   }
 
@@ -38,15 +72,17 @@ class App extends Component {
       <div className="base-container">
         <Helmet>
           <meta charSet="utf-8" />
-          <title>Fields | 2019</title>
+          <title>Fields</title>
           <meta name="author" content="Outer Practice" />
           <meta name="description" content="Revolving around website and print matters." />
           <meta name="copyright" content="Outer Practice" />
         </Helmet>
         <Header />
+        <HeaderMob />
         <Suspense fallback={ <div>loading...</div> }>
           { this.state.container }
         </Suspense>
+        <Footer />
       </div>
     );
   }

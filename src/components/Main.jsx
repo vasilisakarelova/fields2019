@@ -1,5 +1,4 @@
-import React, { Component } from 'react'
-import Collapsible from 'react-collapsible'
+import React, { Component, Suspense } from 'react'
 import Accordion from './Accordion.jsx'
 
 import foil from '../assets/foil.png'
@@ -27,7 +26,8 @@ export default class extends Component {
     siblings.forEach((sibling, idx) => {
       const siblingtrigger = sibling.querySelector('.main-collapsible--item__trigger')
       const isOpen = siblingtrigger.classList.contains('is-open')
-      if (openingId == idx) return
+      console.log(parseInt(openingId) === idx)
+      if (parseInt(openingId) === idx) return
       if (isOpen) {
         siblingtrigger.click()
       }
@@ -51,49 +51,51 @@ export default class extends Component {
           <img className='main-image--item main-image--foil_tree_left' alt='foil_tree_left' src={foil_tree_left} />
           <img className='main-image--item main-image--foil_tree_right' alt='foil_tree_right' src={foil_tree_right} />
         </div>
-        <div className='main-date--wrap'>
-          <div className='main-date'>10 - 11 aвгуста 2019</div>
-          <div className='main-date--mutabor'>
-            <svg width="100%" height="100%" viewBox="0 0 40 71" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M37.466 0V37.08C36.98 49.962 25.918 54.744 20.022 54.4H19.902C13.632 54.308 4.032 50.476 2.534 37.8V0H0V70.134H2.534V50.358C4.652 51.99 10.866 56.43 19.734 56.43C29.04 56.43 35.496 52.03 37.494 50.362L37.466 56.4H40V0H37.466Z" fill="white"/>
-            </svg>
-          </div>
-        </div>
-        <Accordion className='main-collapsible--wrap' closeable={true} classParentString='main-collapsible--item'>
-          <div className='main-collapsible--item' data-trigger='Fields'>
-            <div className='main-collapsible--item-text'>
-              <span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist22 /</span><span className='main-collapsible--artist'> Artistartist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artistart /</span>
-              <span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist22 /</span><span className='main-collapsible--artist'> Artistartist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artistart /</span>
-              <span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist22 /</span><span className='main-collapsible--artist'> Artistartist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artistart /</span>
-              <span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist22 /</span><span className='main-collapsible--artist'> Artistartist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artistart /</span>
+        <Suspense fallback={ <div>loading...</div> }>
+          <div className='main-date--wrap'>
+            <div className='main-date'>10 - 11 aвгуста 2019</div>
+            <div className='main-date--mutabor'>
+              <svg width="100%" height="100%" viewBox="0 0 40 71" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M37.466 0V37.08C36.98 49.962 25.918 54.744 20.022 54.4H19.902C13.632 54.308 4.032 50.476 2.534 37.8V0H0V70.134H2.534V50.358C4.652 51.99 10.866 56.43 19.734 56.43C29.04 56.43 35.496 52.03 37.494 50.362L37.466 56.4H40V0H37.466Z" fill="white"/>
+              </svg>
             </div>
           </div>
-          <div className='main-collapsible--item' data-trigger='Diagonal'>
-            <div className='main-collapsible--item-text'>
-              <span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist22 /</span><span className='main-collapsible--artist'> Artistartist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artistart /</span>
+          <Accordion className='main-collapsible--wrap' closeable={true} classParentString='main-collapsible--item'>
+            <div className='main-collapsible--item' data-trigger='Fields'>
+              <div className='main-collapsible--item-text'>
+                <span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist22 /</span><span className='main-collapsible--artist'> Artistartist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artistart /</span>
+                <span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist22 /</span><span className='main-collapsible--artist'> Artistartist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artistart /</span>
+                <span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist22 /</span><span className='main-collapsible--artist'> Artistartist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artistart /</span>
+                <span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist22 /</span><span className='main-collapsible--artist'> Artistartist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artistart /</span>
+              </div>
             </div>
-          </div>
-          <div className='main-collapsible--item' data-trigger='THE WIRE SOUNDSYSTEM'>
-            <div className='main-collapsible--item-text'>
-              <span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist22 /</span><span className='main-collapsible--artist'> Artistartist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artistart /</span>
+            <div className='main-collapsible--item' data-trigger='Diagonal' data-desc='Пятый фестиваль Fields собран из кураторских блоков и шоукейсов. Их формированием занимались музыкальные сообщества, звукозаписывающие лейблы и тематические музыкальные медиа:'>
+              <div className='main-collapsible--item-text'>
+                <span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist22 /</span><span className='main-collapsible--artist'> Artistartist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artistart /</span>
+              </div>
             </div>
-          </div>
-          <div className='main-collapsible--item' data-trigger='NEW NEW WORLD RADIO'>
-            <div className='main-collapsible--item-text'>
-              <span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist22 /</span><span className='main-collapsible--artist'> Artistartist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artistart /</span>
+            <div className='main-collapsible--item' data-trigger='THE WIRE SOUNDSYSTEM'>
+              <div className='main-collapsible--item-text'>
+                <span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist22 /</span><span className='main-collapsible--artist'> Artistartist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artistart /</span>
+              </div>
             </div>
-          </div>
-          <div className='main-collapsible--item' data-trigger='ORED RECORDINGS'>
-            <div className='main-collapsible--item-text'>
-              <span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist22 /</span><span className='main-collapsible--artist'> Artistartist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artistart /</span>
+            <div className='main-collapsible--item' data-trigger='NEW NEW WORLD RADIO'>
+              <div className='main-collapsible--item-text'>
+                <span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist22 /</span><span className='main-collapsible--artist'> Artistartist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artistart /</span>
+              </div>
             </div>
-          </div>
-          <div className='main-collapsible--item' data-trigger='РИХТЕРФЕСТ'>
-            <div className='main-collapsible--item-text'>
-              <span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist22 /</span><span className='main-collapsible--artist'> Artistartist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artistart /</span>
+            <div className='main-collapsible--item' data-trigger='ORED RECORDINGS'>
+              <div className='main-collapsible--item-text'>
+                <span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist22 /</span><span className='main-collapsible--artist'> Artistartist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artistart /</span>
+              </div>
             </div>
-          </div>
-        </Accordion>
+            <div className='main-collapsible--item' data-trigger='РИХТЕРФЕСТ'>
+              <div className='main-collapsible--item-text'>
+                <span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist22 /</span><span className='main-collapsible--artist'> Artistartist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artistart /</span>
+              </div>
+            </div>
+          </Accordion>
+        </Suspense>
       </div>
     )
   }

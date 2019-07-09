@@ -1,4 +1,7 @@
 @import './typography.css';
 @import './base.css';
 @import './header.css';
+@import './headerMob.css';
 @import './main.css';
+@import './footer.css';
+@import './about.css';
