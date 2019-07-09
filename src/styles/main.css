@@ -1,8 +1,6 @@
 .main-wrap {
   position: relative;
-  background-color: #B0B6BB;
   display: grid;
-  height: 100%;
   padding: 0 20px;
   grid-template-columns: repeat(2, minmax(auto, 1fr));
   grid-column-gap: 20px;
@@ -10,5 +8,159 @@
   @media (min-width: 984px) {
     padding: 0 60px;
     grid-template-columns: repeat(8, minmax(auto, 1fr));
+  }
+}
+
+.main-image {
+  position: relative;
+  display: block;
+  grid-column: span 2;
+  width: 100vw;
+  height: 100vh;
+  left: -20px;
+  overflow: hidden;
+
+  @media (min-width: 984px) {
+    grid-column: span 8;
+    left: -60px;
+    background-image: url('./assets/background.png');
+    background-size: cover;
+    background-position: center center;
+  }
+
+  &--item {
+    position: absolute;
+    display: block;
+    width: 105%;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%,-50%);
+  }
+}
+
+.main-date {
+  font-family: Editorial Grotesk ;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 72px;
+  line-height: 72px;
+  text-align: center;
+  letter-spacing: -0.05em;
+  font-feature-settings: 'tnum' on, 'onum' on;
+  color: #FFFFFF;
+
+  &--wrap {
+    position: absolute;
+    left: 50%;
+    top: 60vh;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+
+  &--mutabor {
+    position: relative;
+    display: block;
+    width: 70px;
+
+    @media (min-width: 984px) {
+      width: 70px;
+      margin: 0 auto;
+      padding-top: 87px;
+    }
+  }
+}
+
+.main-collapsible {
+  &--wrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    grid-column: span 2;
+
+    @media (min-width: 984px) {
+      grid-column: span 8;
+      padding-top: 287px;
+    }
+  }
+
+  &--item {
+    position: relative;
+    display: block;
+    padding-bottom: 30px;
+
+    &:nth-of-type(1) {
+      order: 1;
+    }
+
+    &:nth-of-type(2) {
+      order: 2;
+    }
+
+    &:nth-of-type(3) {
+      order: 3;
+    }
+
+    &:nth-of-type(4) {
+      order: 4;
+    }
+
+    &:nth-of-type(5) {
+      order: 5;
+    }
+
+    &:nth-of-type(6) {
+      order: 6;
+    }
+
+    &.is-opened {
+      order: 0;
+    }
+  }
+
+  &--item__trigger {
+    position: relative;
+    display: inline-block;
+    font-family: Editorial Grotesk ;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 88px;
+    line-height: 88px;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    font-feature-settings: 'tnum' on, 'onum' on;
+    color: #000000;
+    cursor: pointer;
+    transition: color .1s linear;
+
+    &:hover {
+      color: #fff;
+    }
+
+    &.is-open {
+      color: #fff;
+    }
+  }
+
+  &--item__contentInner {
+    border-bottom: 1px solid #fff;
+    margin-bottom: 30px;
+  }
+
+  &--artist {
+    position: relative;
+    display: inline-block;
+    font-family: Editorial Grotesk ;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 48px;
+    text-transform: uppercase;
+    font-feature-settings: 'tnum' on, 'onum' on;
+    color: #fff;
+    transition: color .1s linear;
+
+    &:hover {
+      color: #000;
+    }
   }
 }

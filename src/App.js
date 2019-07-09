@@ -2,8 +2,6 @@ import React, { Component, Suspense, lazy } from 'react'
 import { Helmet } from 'react-helmet'
 import page from 'page'
 
-import Link from './helpers/Link.js'
-
 import Header from './components/Header.jsx'
 const Main = lazy(() => import('./components/Main.jsx'))
 

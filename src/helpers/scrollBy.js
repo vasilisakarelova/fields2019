@@ -1,17 +1,24 @@
-export default (distance, duration) => {
-  var initialY = 0
-  var y = initialY + distance
-  var baseY = (initialY + y) * 0.5
-  var difference = initialY - baseY
-  var startTime = Date.now()
+export default (element, to, duration) => {
+  var start = element.scrollTop,
+        change = to - start,
+        currentTime = 0,
+        increment = 20;
 
-  function step () {
-    var normalizedTime = (Date.now() - startTime) / duration
-    if (normalizedTime > 1) normalizedTime = 1
-
-    window.scrollTo(0, baseY + difference * Math.cos(normalizedTime * Math.PI))
-    if (normalizedTime < 1) window.requestAnimationFrame(step)
+  var animateScroll = function(){
+      currentTime += increment
+      var val = Math.easeInOutQuad(currentTime, start, change, duration)
+      element.scrollTop = val
+      if(currentTime < duration) {
+          setTimeout(animateScroll, increment)
+      }
   }
-  
-  window.requestAnimationFrame(step)
+
+  animateScroll()
+}
+
+Math.easeInOutQuad = function (t, b, c, d) {
+  t /= d/2;
+	if (t < 1) return c/2*t*t + b;
+	t--;
+	return -c/2 * (t*(t-2) - 1) + b;
 }
