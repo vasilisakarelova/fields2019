@@ -1,26 +1,57 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component, Suspense, lazy } from 'react'
+import { Helmet } from 'react-helmet'
+import page from 'page'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Link from './helpers/Link.js'
+
+import Header from './components/Header.jsx'
+const Main = lazy(() => import('./components/Main.jsx'))
+
+class App extends Component {
+  state = {
+    container: null
+  }
+
+  constructor (props) {
+    super(props)
+
+    this.initRouting = this.initRouting.bind(this)
+  }
+
+  initRouting () {
+    //page.base('/new')
+
+    page('/', (ctx, next) => {
+      this.setState({
+        route: ctx.path,
+        container: <Main />
+      })
+    })
+
+    page()
+  }
+
+  componentDidMount() {
+    this.initRouting()
+  }
+
+  render() {
+    return (
+      <div className="base-container">
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>Fields | 2019</title>
+          <meta name="author" content="Outer Practice" />
+          <meta name="description" content="Revolving around website and print matters." />
+          <meta name="copyright" content="Outer Practice" />
+        </Helmet>
+        <Header />
+        <Suspense fallback={ <div>loading...</div> }>
+          { this.state.container }
+        </Suspense>
+      </div>
+    );
+  }
 }
 
-export default App;
+export default App
