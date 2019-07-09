@@ -16,11 +16,12 @@
   display: block;
   grid-column: span 2;
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 100px);
   left: -20px;
   overflow: hidden;
 
   @media (min-width: 984px) {
+    height: 100vh;
     grid-column: span 8;
     left: -60px;
     background-image: url('./assets/background.png');
@@ -50,11 +51,16 @@
   color: #FFFFFF;
 
   &--wrap {
-    position: absolute;
-    left: 50%;
-    top: 60vh;
-    transform: translateX(-50%);
+    position: relative;
     text-align: center;
+
+    @media (min-width: 984px) {
+      position: absolute;
+      left: 50%;
+      top: 60vh;
+      transform: translateX(-50%);
+      z-index: 1;
+    }
   }
 
   &--mutabor {

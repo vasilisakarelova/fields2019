@@ -37,6 +37,14 @@ export default class extends Component {
   render () {
     return (
       <div className='main-wrap'>
+        <div className='main-date--wrap'>
+          <div className='main-date'>10 - 11 aвгуста 2019</div>
+          <div className='main-date--mutabor'>
+            <svg width="100%" height="100%" viewBox="0 0 40 71" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M37.466 0V37.08C36.98 49.962 25.918 54.744 20.022 54.4H19.902C13.632 54.308 4.032 50.476 2.534 37.8V0H0V70.134H2.534V50.358C4.652 51.99 10.866 56.43 19.734 56.43C29.04 56.43 35.496 52.03 37.494 50.362L37.466 56.4H40V0H37.466Z" fill="white"/>
+            </svg>
+          </div>
+        </div>
         <div className='main-image'>
           <img className='main-image--item main-image--foil' alt='foil' src={foil} />
           <img className='main-image--item main-image--fields' alt='fields' src={fields} />
@@ -52,14 +60,6 @@ export default class extends Component {
           <img className='main-image--item main-image--foil_tree_right' alt='foil_tree_right' src={foil_tree_right} />
         </div>
         <Suspense fallback={ <div>loading...</div> }>
-          <div className='main-date--wrap'>
-            <div className='main-date'>10 - 11 aвгуста 2019</div>
-            <div className='main-date--mutabor'>
-              <svg width="100%" height="100%" viewBox="0 0 40 71" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M37.466 0V37.08C36.98 49.962 25.918 54.744 20.022 54.4H19.902C13.632 54.308 4.032 50.476 2.534 37.8V0H0V70.134H2.534V50.358C4.652 51.99 10.866 56.43 19.734 56.43C29.04 56.43 35.496 52.03 37.494 50.362L37.466 56.4H40V0H37.466Z" fill="white"/>
-              </svg>
-            </div>
-          </div>
           <Accordion className='main-collapsible--wrap' closeable={true} classParentString='main-collapsible--item'>
             <div className='main-collapsible--item' data-trigger='Fields'>
               <div className='main-collapsible--item-text'>
