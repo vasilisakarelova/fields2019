@@ -10,6 +10,7 @@ const About = lazy(() => import('./components/About.jsx'))
 const Partners = lazy(() => import('./components/Partners.jsx'))
 const Lineup = lazy(() => import('./components/Lineup.jsx'))
 const Tickets = lazy(() => import('./components/Tickets.jsx'))
+const History = lazy(() => import('./components/History.jsx'))
 
 class App extends Component {
   state = {
@@ -67,6 +68,15 @@ class App extends Component {
       this.setState({
         route: ctx.path,
         container: <Tickets />
+      })
+
+      this.openMobMenu(false)
+    })
+
+    page('/history', (ctx, next) => {
+      this.setState({
+        route: ctx.path,
+        container: <History />
       })
 
       this.openMobMenu(false)

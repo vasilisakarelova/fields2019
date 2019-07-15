@@ -1,14 +1,22 @@
 import React, { Component } from 'react'
 import { Helmet } from 'react-helmet'
-import { YMaps, Map, Placemark } from "react-yandex-maps"
+import { YMaps, Map, Placemark } from 'react-yandex-maps'
 import Link from '../helpers/Link'
+import Slider from 'react-slick'
 
 import placeholder from '../assets/placeholder.png'
 
 export default class extends Component {
-  componentDidMount () {}
-
   render () {
+    const settings = {
+      dots: false,
+      arrows: false,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1
+    }
+
     return (
       <div className='about-wrap'>
         <Helmet>
@@ -34,7 +42,26 @@ export default class extends Component {
               <p>Пятый выпуск фестиваля изобретательной музыки Fields пройдет в новом пространстве команд Arma и «Рабица» — Mutabor. Его программа охватит временной интервал в два дня и одну ночь, а само действо развернется на трех параллельных сценах.</p>
               <p>В программе: десяток с лишним зарубежных гостей, свыше 30 живых выступлений, долгожданные российские премьеры и внезапные коллаборации. Кураторское начало, как и прежде, превалирует над трендами: важная роль на фестивале Fields отводится неочевидным героям независимой сцены и серым кардиналам авангарда.</p>
               <div className='about-text--slider-wrap'>
-                <div className='about-text--slider'></div>
+                <div className='about-text--slider'>
+                  <Slider {...settings}>
+                    <div className='about-text--slider-item'>
+                      <img alt='placeholder' src={placeholder}/>
+                      <span style={{position: 'absolute', top: '0', left: '0'}}>1</span>
+                    </div>
+                    <div className='about-text--slider-item'>
+                      <img alt='placeholder' src={placeholder}/>
+                      <span style={{position: 'absolute', top: '0', left: '0'}}>2</span>
+                    </div>
+                    <div className='about-text--slider-item'>
+                      <img alt='placeholder' src={placeholder}/>
+                      <span style={{position: 'absolute', top: '0', left: '0'}}>3</span>
+                    </div>
+                    <div className='about-text--slider-item'>
+                      <img alt='placeholder' src={placeholder}/>
+                      <span style={{position: 'absolute', top: '0', left: '0'}}>4</span>
+                    </div>
+                  </Slider>
+                </div>
                 <div className='about-text--slider-desc'>
                   <div className='about-text--slider-desc-top'>Описание/ Копирайт</div>
                   <div className='about-text--slider-desc-bottom'>Photo Description / Copyright</div>

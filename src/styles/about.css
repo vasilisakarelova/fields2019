@@ -88,11 +88,32 @@
     }
   }
 
+  &--slider {
+    display: block;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 20px;
+  }
+
+  &--slider-item {
+    position: relative;
+    display: block !important;
+    outline: none;
+
+    img {
+      position: relative;
+      display: block;
+      width: 100%;
+    }
+  }
+
   &--slider-wrap {
     position: relative;
     display: flex;
     align-items: flex-end;
-    height: 500px;
+    flex-direction: column;
     width: calc(100% + 103px);
     margin-bottom: 53px;
     left: -103px;
