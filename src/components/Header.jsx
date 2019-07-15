@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import * as css from 'classnames'
 import Link from '../helpers/Link'
 
 import logo from '../assets/logo.png'
@@ -8,7 +9,7 @@ export default class extends Component {
 
   render () {
     return (
-      <div className='header-wrap'>
+      <div className={css('header-wrap', {'is-open': this.props.openMobMenu})}>
         <div className='header-inner'>
           <div className='header-logo'>
             <Link className='header-logo--link' to='/'>

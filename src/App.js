@@ -13,13 +13,15 @@ const Tickets = lazy(() => import('./components/Tickets.jsx'))
 
 class App extends Component {
   state = {
-    container: null
+    container: null,
+    openMobMenu: false
   }
 
   constructor (props) {
     super(props)
 
     this.initRouting = this.initRouting.bind(this)
+    this.openMobMenu = this.openMobMenu.bind(this)
   }
 
   initRouting () {
@@ -30,6 +32,8 @@ class App extends Component {
         route: ctx.path,
         container: <Main />
       })
+
+      this.openMobMenu(false)
     })
 
     page('/about', (ctx, next) => {
@@ -37,6 +41,8 @@ class App extends Component {
         route: ctx.path,
         container: <About />
       })
+
+      this.openMobMenu(false)
     })
 
     page('/partners', (ctx, next) => {
@@ -44,6 +50,8 @@ class App extends Component {
         route: ctx.path,
         container: <Partners />
       })
+
+      this.openMobMenu(false)
     })
 
     page('/lineup', (ctx, next) => {
@@ -51,6 +59,8 @@ class App extends Component {
         route: ctx.path,
         container: <Lineup />
       })
+
+      this.openMobMenu(false)
     })
 
     page('/tickets', (ctx, next) => {
@@ -58,9 +68,17 @@ class App extends Component {
         route: ctx.path,
         container: <Tickets />
       })
+
+      this.openMobMenu(false)
     })
 
     page()
+  }
+
+  openMobMenu (isOpen) {
+    this.setState({
+      openMobMenu: isOpen
+    })
   }
 
   componentDidMount() {
@@ -77,8 +95,8 @@ class App extends Component {
           <meta name="description" content="Revolving around website and print matters." />
           <meta name="copyright" content="Outer Practice" />
         </Helmet>
-        <Header />
-        <HeaderMob />
+        <Header openMobMenu={this.state.openMobMenu} />
+        <HeaderMob openMobMenu={this.openMobMenu} isOpen={this.state.openMobMenu} />
         <Suspense fallback={ <div>loading...</div> }>
           { this.state.container }
         </Suspense>

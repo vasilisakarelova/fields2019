@@ -16,12 +16,12 @@
   display: block;
   grid-column: span 2;
   width: 100vw;
-  height: calc(100vh - 100px);
+  padding-top: calc(100vh - 207px);
   left: -20px;
   overflow: hidden;
 
   @media (min-width: 984px) {
-    height: 100vh;
+    padding-top: 100vh;
     grid-column: span 8;
     left: -60px;
     background-image: url('./assets/background.png');
@@ -32,43 +32,84 @@
   &--item {
     position: absolute;
     display: block;
-    width: 105%;
-    left: 50%;
-    top: 60%;
-    transform: translate(-50%,-50%);
+    width: 170%;
+    top: 0;
+    left: 5%;
+    /* opacity: 0;
+    transition: opacity .4s linear; */
+
+    @media (min-width: 984px) {
+      width: 105%;
+      left: 50%;
+      top: 60%;
+      transform: translate(-50%,-50%);
+    }
   }
 }
 
 .main-date {
+  position: relative;
+  display: block;
+  width: 100%;
   font-family: Editorial Grotesk ;
   font-style: normal;
   font-weight: normal;
-  font-size: 72px;
-  line-height: 72px;
-  text-align: center;
+  font-size: 21px;
+  line-height: 20px;
   letter-spacing: -0.05em;
   font-feature-settings: 'tnum' on, 'onum' on;
   color: #FFFFFF;
 
+  @media (min-width: 984px) {
+    font-size: 72px;
+    line-height: 72px;
+    text-align: center;
+  }
+
+  span {
+    display: none;
+
+    @media (min-width: 984px) {
+      display: inline-block;
+    }
+  }
+
   &--wrap {
     position: relative;
-    text-align: center;
+    padding-top: 42px;
 
     @media (min-width: 984px) {
       position: absolute;
+      padding-top: 0px;
       left: 50%;
       top: 60vh;
       transform: translateX(-50%);
       z-index: 1;
+      text-align: center;
     }
+  }
+
+  &--fields {
+    position: relative;
+    display: block;
+    width: 100%;
+    font-family: Editorial Grotesk ;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 45px;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    font-feature-settings: 'tnum' on, 'onum' on;
+    color: #000000;
   }
 
   &--mutabor {
     position: relative;
-    display: block;
-    width: 70px;
+    display: none;
 
     @media (min-width: 984px) {
+      display: block;
       width: 70px;
       margin: 0 auto;
       padding-top: 87px;
@@ -90,6 +131,7 @@
   &--wrap-inner {
     display: flex;
     flex-direction: column;
+    padding-bottom: 70px;
 
     @media (min-width: 984px) {
       padding-top: 80px;
@@ -102,22 +144,32 @@
     display: flex;
     flex-direction: row;
     grid-column: span 2;
+    padding-bottom: 45px;
 
     @media (min-width: 984px) {
       grid-column: span 8;
       padding-top: 200px;
+      padding-bottom: 0px;
     }
   }
 
   &--desc-arrow {
     position: relative;
-    width: 40%;
+    width: 95px;
     padding-right: 36px;
 
-    svg {
+    @media (min-width: 984px) {
+      width: 40%;
+    }
+
+    &-svg {
       position: relative;
-      display: block;
+      display: none;
       width: 100%;
+
+      @media (min-width: 984px) {
+        display: block;
+      }
 
       &.animate path {
         animation: draw 1s;
@@ -128,25 +180,44 @@
         animation: drawReverse 1s;
         animation-fill-mode: forwards;
       }
+
+      path {
+        stroke-dasharray: 518;
+        stroke-dashoffset: 518;
+      }
     }
 
-    path {
-      stroke-dasharray: 518;
-      stroke-dashoffset: 518;
+    &-svg-mob {
+      position: relative;
+      width: 60px;
+
+      @media (min-width: 984px) {
+        display: none;
+      }
     }
   }
 
   &--desc-text {
     position: relative;
-    width: 60%;
+    width: 100%;
     font-family: Editorial Grotesk ;
     font-style: normal;
     font-weight: normal;
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 16px;
+    line-height: 20px;
     color: #FFFFFF;
     opacity: 0;
     transition: all 1s linear;
+
+    @media (max-width: 983px) {
+      opacity: 1 !important;
+    }
+
+    @media (min-width: 984px) {
+      width: 60%;
+      font-size: 18px;
+      line-height: 24px;
+    }
   }
 
   &--item {

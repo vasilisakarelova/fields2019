@@ -5,6 +5,12 @@
   z-index: 100;
   background: transparent;
 
+  &.is-open {
+    path {
+      fill: #fff;
+    }
+  }
+
   @media (min-width: 984px) {
     display: none;
   }
@@ -33,6 +39,10 @@
     display: block;
     width: 100%;
   }
+
+  path {
+    transition: fill .4s linear;
+  }
 }
 
 .header-nav--mob {
@@ -47,5 +57,9 @@
     display: block;
     width: 100%;
     height: 100%;
+  }
+
+  path {
+    transition: fill .4s linear;
   }
 }

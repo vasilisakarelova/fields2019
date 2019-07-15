@@ -1,0 +1,232 @@
+.about-wrap {
+  position: relative;
+  display: grid;
+  padding: 0 20px;
+  grid-template-columns: repeat(2,minmax(auto,1fr));
+  grid-column-gap: 20px;
+}
+
+.about-inner {
+  position: relative;
+  display: block;
+  grid-column: span 2;
+  padding-top: 35px;
+}
+
+.about-title {
+  &--wrap {
+    position: relative;
+    display: block;
+    margin-left: 83px;
+  }
+
+  &--name {
+    font-family: Editorial Grotesk ;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 64px;
+    line-height: 60px;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    font-feature-settings: 'tnum' on, 'onum' on;
+    color: #000000;
+
+    br {
+      @media (min-width: 984px) {
+        display: none;
+      }
+    }
+  }
+
+  &--date {
+    font-family: Editorial Grotesk ;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 21px;
+    line-height: 20px;
+    letter-spacing: -0.05em;
+    font-feature-settings: 'tnum' on, 'onum' on;
+    color: #FFFFFF;
+  }
+}
+
+.about-text {
+  &--wrap {
+    position: relative;
+    display: block;
+  }
+
+  &--mutabor {
+    position: absolute;
+    top: 40px;
+    left: 33px;
+    width: 28px;
+  }
+
+  &--self {
+    position: relative;
+    display: block;
+    margin-left: 83px;
+    font-family: Editorial Grotesk ;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    font-feature-settings: 'tnum' on, 'onum' on;
+    color: #FFFFFF;
+    padding-top: 37px;
+    padding-bottom: 64px;
+
+    p {
+      font: inherit;
+      margin: 0;
+      margin-bottom: 53px;
+
+      &:last-of-type {
+        margin-bottom: 0px;
+      }
+    }
+  }
+
+  &--slider-wrap {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    height: 500px;
+    width: calc(100% + 103px);
+    margin-bottom: 53px;
+    left: -103px;
+  }
+
+  &--slider-desc {
+    position: relative;
+    display: block;
+    width: 100%;
+    text-align: right;
+  }
+
+  &--slider-desc-top {
+    font-family: Editorial Grotesk ;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 15px;
+    text-align: right;
+    color: #000000;
+    mix-blend-mode: normal;
+    padding-bottom: 5px;
+    margin-bottom: 3px;
+    border-bottom: 1px solid #fff;
+  }
+
+  &--slider-desc-bottom {
+    font-family: Editorial Grotesk ;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 9px;
+    line-height: 9px;
+    text-align: right;
+    color: #FFFFFF;
+    mix-blend-mode: normal;
+  }
+}
+
+.about-link {
+  position: relative;
+  width: 100%;
+
+  &--next {
+    position: relative;
+    width: calc(100% + 15px);
+    padding-bottom: 42px;
+
+    .about-link--arrow {
+      margin-left: 10px;
+    }
+
+    .about-link {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: flex-end;
+      text-decoration: none;
+
+      &:visited,
+      &:focus,
+      &:active {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &--prev {
+    position: relative;
+    width: calc(100% + 0px);
+    left: -15px;
+    padding-bottom: 42px;
+
+    .about-link--arrow {
+      margin-right: 10px;
+    }
+
+    .about-link {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: flex-start;
+      text-decoration: none;
+
+      &:visited,
+      &:focus,
+      &:active {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &--name {
+    font-family: Editorial Grotesk ;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 20px;
+    text-align: right;
+    text-transform: uppercase;
+    font-feature-settings: 'tnum' on, 'onum' on;
+    color: #FFFFFF;
+
+    br {
+      @media (min-width: 984px) {
+        display: none;
+      }
+    }
+  }
+
+  &--arrow {
+    position: relative;
+    display: block;
+    height: 33px;
+    width: 90px;
+
+    svg {
+      position: relative;
+      display: block;
+    }
+  }
+}
+
+.about-map {
+  &--wrap {
+    position: relative;
+    display: block;
+    width: calc(100% + 20px);
+    height: 460px;
+    filter: grayscale(100%);
+    padding-bottom: 53px;
+  }
+}
+
+.ymaps-2-1-74-map-copyrights-promo,
+.ymaps-2-1-74-copyrights-pane {
+  display: none;
+}

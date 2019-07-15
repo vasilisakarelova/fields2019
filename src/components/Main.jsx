@@ -15,10 +15,31 @@ import foil_tree_left from '../assets/foil_tree_left.png'
 import foil_tree_right from '../assets/foil_tree_right.png'
 
 export default class extends Component {
+  state = {
+    afishaReady: 0
+  }
+
   constructor (props) {
     super(props)
 
     this.checkSiblings = this.checkSiblings.bind(this)
+    this.setAfishaReady = this.setAfishaReady.bind(this)
+  }
+
+  setAfishaReady (ev) {
+    const prevAfishaReady = this.state.afishaReady
+
+    this.setState(prevState => {
+      return {
+        afishaReady: prevState.afishaReady + 1
+      }
+    })
+
+    if ((prevAfishaReady + 1) === 12) {
+      document.querySelectorAll('.main-image--item').forEach(img => {
+        console.log(img)
+      })
+    }
   }
 
   checkSiblings (openingId) {
@@ -38,7 +59,8 @@ export default class extends Component {
     return (
       <div className='main-wrap'>
         <div className='main-date--wrap'>
-          <div className='main-date'>10 - 11 aвгуста 2019</div>
+          <div className='main-date--fields'>Fields 2019</div>
+          <div className='main-date'>10 - 11 aвгуста <span>2019</span></div>
           <div className='main-date--mutabor'>
             <svg width="100%" height="100%" viewBox="0 0 40 71" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M37.466 0V37.08C36.98 49.962 25.918 54.744 20.022 54.4H19.902C13.632 54.308 4.032 50.476 2.534 37.8V0H0V70.134H2.534V50.358C4.652 51.99 10.866 56.43 19.734 56.43C29.04 56.43 35.496 52.03 37.494 50.362L37.466 56.4H40V0H37.466Z" fill="white"/>
@@ -63,35 +85,22 @@ export default class extends Component {
           <Accordion className='main-collapsible--wrap' closeable={true} classParentString='main-collapsible--item'>
             <div className='main-collapsible--item' data-trigger='Fields'>
               <div className='main-collapsible--item-text'>
-                <span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist22 /</span><span className='main-collapsible--artist'> Artistartist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artistart /</span>
-                <span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist22 /</span><span className='main-collapsible--artist'> Artistartist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artistart /</span>
-                <span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist22 /</span><span className='main-collapsible--artist'> Artistartist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artistart /</span>
-                <span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist22 /</span><span className='main-collapsible--artist'> Artistartist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artistart /</span>
+                <span className='main-collapsible--artist'>Senyawa (Индонезия) /</span> <span className='main-collapsible--artist'>SHXCXCHCXSH (Швеция) /</span> <span className='main-collapsible--artist'> Carla Dal Forno (Австралия) /</span> <span className='main-collapsible--artist'> Kemialliset Ystävät (Финляндия) /</span> <span className='main-collapsible--artist'> SSTROM (Швеция) /</span> <span className='main-collapsible--artist'> Vladimir Martynov & Moa Pillar /</span> <span className='main-collapsible--artist'> Ishome /</span> <span className='main-collapsible--artist'> Kedr Livanskiy /</span> <span className='main-collapsible--artist'> Kymatic /</span> <span className='main-collapsible--artist'>ПТУ /</span> <span className='main-collapsible--artist'> Kate NV /</span> <span className='main-collapsible--artist'> Peter Theremin & Benjamin Skepper /</span> <span className='main-collapsible--artist'>Интурист /</span> <span className='main-collapsible--artist'> Bad Zu /</span> <span className='main-collapsible--artist'> Andrey Lee & Viktor Glazunov /</span> <span className='main-collapsible--artist'> X.Y.R. /</span> <span className='main-collapsible--artist'> oqbqbo /</span> <span className='main-collapsible--artist'> Yung Acid /</span> <span className='main-collapsible--artist'> EYWA3 /</span> <span className='main-collapsible--artist'> Narcissi /</span> <span className='main-collapsible--artist'> Salama /</span> <span className='main-collapsible--artist'>Vtgnike /</span> <span className='main-collapsible--artist'> Marzahn /</span> <span className='main-collapsible--artist'> Holy Palms /</span> <span className='main-collapsible--artist'>Алексей Бобровский /</span> <span className='main-collapsible--artist'> Denis Smagin /</span> <span className='main-collapsible--artist'> Broken Composers /</span>
               </div>
             </div>
-            <div className='main-collapsible--item' data-trigger='Diagonal' data-desc='Пятый фестиваль Fields собран из кураторских блоков и шоукейсов. Их формированием занимались музыкальные сообщества, звукозаписывающие лейблы и тематические музыкальные медиа:'>
+            <div className='main-collapsible--item' data-trigger='Ored Recordings'>
               <div className='main-collapsible--item-text'>
-                <span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist22 /</span><span className='main-collapsible--artist'> Artistartist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artistart /</span>
+                <span className='main-collapsible--artist'>Хава Хамзатова /</span> <span className='main-collapsible--artist'> Заур Нагоев /</span> <span className='main-collapsible--artist'> Jrpjej /</span>
               </div>
             </div>
-            <div className='main-collapsible--item' data-trigger='THE WIRE SOUNDSYSTEM'>
+            <div className='main-collapsible--item' data-trigger='Рихтерфест'>
               <div className='main-collapsible--item-text'>
-                <span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist22 /</span><span className='main-collapsible--artist'> Artistartist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artistart /</span>
+                <span className='main-collapsible--artist'>Carl Stone (США) /</span> <span className='main-collapsible--artist'> Yussef Abouzeid (Египет) /</span> <span className='main-collapsible--artist'> Алексей Борисов & Максим Елизаров & Дмитрий Лапшин /</span> <span className='main-collapsible--artist'> Sanscreed Kanon /</span> <span className='main-collapsible--artist'> Rites Of Passage /</span> <span className='main-collapsible--artist'> Speedball Trio /</span> <span className='main-collapsible--artist'> Drumutabor (Андрей Ким, Петр Отоцкий, Сергей Болотин, Оксана Григорьева) /</span> <span className='main-collapsible--artist'> Drojji /</span> <span className='main-collapsible--artist'> Петяев-Петяев Квартет /</span>
               </div>
             </div>
-            <div className='main-collapsible--item' data-trigger='NEW NEW WORLD RADIO'>
+            <div className='main-collapsible--item' data-trigger='Diagonal'>
               <div className='main-collapsible--item-text'>
-                <span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist22 /</span><span className='main-collapsible--artist'> Artistartist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artistart /</span>
-              </div>
-            </div>
-            <div className='main-collapsible--item' data-trigger='ORED RECORDINGS'>
-              <div className='main-collapsible--item-text'>
-                <span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist22 /</span><span className='main-collapsible--artist'> Artistartist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artistart /</span>
-              </div>
-            </div>
-            <div className='main-collapsible--item' data-trigger='РИХТЕРФЕСТ'>
-              <div className='main-collapsible--item-text'>
-                <span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist22 /</span><span className='main-collapsible--artist'> Artistartist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'>Artist /</span><span className='main-collapsible--artist'> Artist /</span><span className='main-collapsible--artist'> Artistart /</span>
+                <span className='main-collapsible--artist'>HP (Rassell Haswell & Powell) /</span> <span className='main-collapsible--artist'> NHK /</span> <span className='main-collapsible--artist'> Sote /</span>
               </div>
             </div>
           </Accordion>

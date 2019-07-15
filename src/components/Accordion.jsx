@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Collapsible from 'react-collapsible'
 
+import getBrowser from '../helpers/getBrowser.js'
 import scrollBy from '../helpers/scrollBy.js'
 
 export default class extends Component {
@@ -9,7 +10,6 @@ export default class extends Component {
     super(props)
 
     this.state = {
-      desc: null,
       transitionTime: PropTypes.number,
       easing: PropTypes.string,
       startPosition: PropTypes.number,
@@ -34,20 +34,20 @@ export default class extends Component {
     this.handleTriggerClick = this.handleTriggerClick.bind(this)
   }
 
-  handleTriggerClick (position, desc) {
+  handleTriggerClick (position) {
     let closeAll = false
 
     if (this.props.closeable) {
       closeAll = (!this.state.closeAll && position === this.state.openPosition);
     }
 
-    if (desc !== undefined) {
+    if (!closeAll) {
       setTimeout(() => {
         this.refs.arrow.classList.remove('animateReverse')
         this.refs.arrow.classList.add('animate')
         this.refs.desc.style.opacity = 1
       }, 400)
-    } else if ((desc === undefined) && this.refs.arrow.classList.contains('animate')) {
+    } else {
       setTimeout(() => {
         this.refs.arrow.classList.add('animateReverse')
         this.refs.desc.style.opacity = 0
@@ -56,11 +56,15 @@ export default class extends Component {
 
     this.setState({
       openPosition: position,
-      closeAll: closeAll,
-      desc: (desc !== undefined) ? desc : null
+      closeAll: closeAll
     })
 
-    scrollBy(document.body, this.refs.accordion.offsetTop, 400)
+    const browser = getBrowser().name
+    if (browser === 'Chrome') {
+      scrollBy(document.documentElement, this.refs.accordion.offsetTop, 400)
+    } else {
+      scrollBy(document.body, this.refs.accordion.offsetTop, 400)
+    }
   }
 
   render () {
@@ -70,7 +74,7 @@ export default class extends Component {
 
       return (<Collapsible
                 key={"Collapsible"+index}
-                handleTriggerClick={position => this.handleTriggerClick(position, node.props['data-desc'])}
+                handleTriggerClick={position => this.handleTriggerClick(position)}
                 open={(!this.state.closeAll && this.state.openPosition === index)}
                 trigger={node.props['data-trigger']}
                 triggerWhenOpen={triggerWhenOpen}
@@ -84,13 +88,16 @@ export default class extends Component {
 
     return (
       <div className={this.props.className} ref='accordion'>
-        <div className='main-collapsible--desc-wrap'>
+        <div className='main-collapsible--desc-wrap' ref='descWrap'>
           <div className='main-collapsible--desc-arrow'>
-            <svg ref='arrow' width="100%" height="100%" viewBox="0 0 472 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg className='main-collapsible--desc-arrow-svg' ref='arrow' width="100%" height="100%" viewBox="0 0 472 44" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M472 0.499999L14 0.499999L14 42.5L1 29.5" stroke="white"/>
             </svg>
+            <svg className='main-collapsible--desc-arrow-svg-mob' ref='arrowMob' width="100%" height="100%" viewBox="0 0 61 165" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 149.832L13 163V0.5H61" stroke="white"/>
+            </svg>
           </div>
-          <div ref='desc' className='main-collapsible--desc-text'>{this.state.desc}</div>
+          <div ref='desc' className='main-collapsible--desc-text'>Пятый фестиваль Fields собран из кураторских блоков и шоукейсов. Их формированием занимались музыкальные сообщества, звукозаписывающие лейблы и тематические музыкальные медиа:</div>
         </div>
         <div className={`${this.props.className}-inner`}>{nodes}</div>
       </div>

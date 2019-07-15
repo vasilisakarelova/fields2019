@@ -8,6 +8,10 @@
   transition: transform .4s linear;
   transform: translateX(100vw);
 
+  &.is-open {
+    transform: translateX(0);
+  }
+
   @media (min-width: 984px) {
     height: auto;
     background: transparent;
@@ -87,6 +91,7 @@
     justify-content: space-between;
     text-decoration: none;
     height: 60px;
+    outline: none;
 
     @media (min-width: 984px) {
       height: 36px;
