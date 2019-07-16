@@ -17,6 +17,7 @@
     "react-collapsible": "^2.6.0",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
+    "react-images": "^1.0.0",
     "react-responsive-accordion": "^1.0.0",
     "react-scripts": "3.0.1",
     "react-slick": "^0.24.0",

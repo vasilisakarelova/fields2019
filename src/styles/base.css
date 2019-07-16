@@ -12,6 +12,11 @@ html, body {
   font-family: Editorial Grotesk;
 }
 
+.css-1rbq2qy,
+.css-yrspe {
+  z-index: 100 !important;
+}
+
 #root {
   position: relative;
   width: 100%;
