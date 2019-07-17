@@ -106,6 +106,10 @@ export default class extends Component {
     }))
   }
 
+  componentWillMount () {
+    window.scrollTo(0, 0)
+  }
+
   render () {
     const settings = {
       dots: false,

@@ -17,6 +17,10 @@ export default class extends Component {
     }
   }
 
+  componentWillMount () {
+    window.scrollTo(0, 0)
+  }
+
   componentDidMount () {
     document.addEventListener('resized', () => {
       if (window.innerWidth < 984 && this.state.mapHeight === '410px') {

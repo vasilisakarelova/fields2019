@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 import { Helmet } from 'react-helmet'
 
 export default class extends Component {
-  componentDidMount () {}
+  componentWillMount () {
+    window.scrollTo(0, 0)
+  }
 
   render () {
     return (

@@ -187,7 +187,17 @@
     color: #FFFFFF;
     padding-bottom: 64px;
 
-    @media (min-width: 984px) {
+    @media (min-width: 984px) and (max-width: 1599px) {
+      margin-left: 0px;
+      font-size: 18px;
+      line-height: 24px;
+      padding-top: 70px;
+      display: grid;
+      grid-template-columns: repeat(8, minmax(10%,1fr));
+      grid-column-gap: 30px;
+    }
+
+    @media (min-width: 1600px) {
       margin-left: 0px;
       font-size: 24px;
       line-height: 36px;

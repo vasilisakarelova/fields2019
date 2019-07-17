@@ -1,6 +1,7 @@
 import React, { Component, Suspense, lazy } from 'react'
 import { Helmet } from 'react-helmet'
 import page from 'page'
+import * as css from 'classnames'
 
 import Header from './components/Header.jsx'
 import HeaderMob from './components/HeaderMob.jsx'
@@ -97,7 +98,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="base-container">
+      <div className={css('base-container', {'at-home': this.state.route === '/'})}>
         <Helmet>
           <meta charSet="utf-8" />
           <title>Fields</title>
