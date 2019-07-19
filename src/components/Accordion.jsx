@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Collapsible from 'react-collapsible'
 
-import getBrowser from '../helpers/getBrowser.js'
 import scrollBy from '../helpers/scrollBy.js'
 
 export default class extends Component {
@@ -10,6 +9,8 @@ export default class extends Component {
     super(props)
 
     this.state = {
+      extra: null,
+      arrowShowed: false,
       transitionTime: PropTypes.number,
       easing: PropTypes.string,
       startPosition: PropTypes.number,
@@ -34,47 +35,47 @@ export default class extends Component {
     this.handleTriggerClick = this.handleTriggerClick.bind(this)
   }
 
-  handleTriggerClick (position) {
+  componentDidMount () {
+    document.addEventListener('scrolled', (ev) => {
+      if (this.refs.arrow.getBoundingClientRect().top <= (window.innerHeight / 2) && !this.state.arrowShowed) {
+        this.refs.arrow.classList.add('animate')
+        this.setState({
+          arrowShowed: true
+        })
+      }
+    })
+  }
+
+  handleTriggerClick (position, extra) {
     let closeAll = false
+    let text = null
 
     if (this.props.closeable) {
       closeAll = (!this.state.closeAll && position === this.state.openPosition);
     }
 
-    if (!closeAll) {
-      setTimeout(() => {
-        this.refs.arrow.classList.remove('animateReverse')
-        this.refs.arrow.classList.add('animate')
-        this.refs.desc.style.opacity = 1
-      }, 400)
+    if (closeAll === true) {
+      text = null
     } else {
-      setTimeout(() => {
-        this.refs.arrow.classList.add('animateReverse')
-        this.refs.desc.style.opacity = 0
-      }, 400)
+      text = extra
     }
 
     this.setState({
       openPosition: position,
-      closeAll: closeAll
+      closeAll: closeAll,
+      extra: text
     })
-
-    const browser = getBrowser().name
-    if (browser === 'Chrome') {
-      scrollBy(document.documentElement, this.refs.accordion.offsetTop, 400)
-    } else {
-      scrollBy(document.body, this.refs.accordion.offsetTop, 400)
-    }
   }
 
   render () {
     const nodes = this.props.children.map((node, index) => {
       const triggerWhenOpen = (node.props['data-trigger-when-open']) ? node.props['data-trigger-when-open'] : node.props['data-trigger']
       const triggerDisabled = (node.props['data-trigger-disabled']) || false
+      const extra = node.props['data-extra']
 
       return (<Collapsible
                 key={"Collapsible"+index}
-                handleTriggerClick={position => this.handleTriggerClick(position)}
+                handleTriggerClick={position => this.handleTriggerClick(position, extra)}
                 open={(!this.state.closeAll && this.state.openPosition === index)}
                 trigger={node.props['data-trigger']}
                 triggerWhenOpen={triggerWhenOpen}
@@ -97,7 +98,7 @@ export default class extends Component {
               <path d="M1 149.832L13 163V0.5H61" stroke="white"/>
             </svg>
           </div>
-          <div ref='desc' className='main-collapsible--desc-text'>Пятый фестиваль Fields собран из кураторских блоков и шоукейсов. Их формированием занимались музыкальные сообщества, звукозаписывающие лейблы и тематические музыкальные медиа:</div>
+          <div ref='desc' className='main-collapsible--desc-text'>Пятый фестиваль Fields собран из кураторских блоков и шоукейсов. Их формированием занимались музыкальные сообщества, звукозаписывающие лейблы и тематические музыкальные медиа<br/><br/>{this.state.extra}</div>
         </div>
         <div className={`${this.props.className}-inner`}>{nodes}</div>
       </div>

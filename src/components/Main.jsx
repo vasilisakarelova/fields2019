@@ -1,7 +1,7 @@
 import React, { Component, Suspense } from 'react'
 import Accordion from './Accordion.jsx'
 
-import afisha_mob from '../assets/afisha-mob.jpg'
+import afisha_mob from '../assets/afisha-mob.png'
 import foil from '../assets/foil.png'
 import fields from '../assets/fields.png'
 import sphere from '../assets/sphere.png'
@@ -63,14 +63,6 @@ export default class extends Component {
   render () {
     return (
       <div className='main-wrap'>
-        <div className='main-date--wrap'>
-          <div className='main-date'>10 - 11 aвгуста <span>2019</span></div>
-          <div className='main-date--mutabor'>
-            <svg width="100%" height="100%" viewBox="0 0 40 71" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M37.466 0V37.08C36.98 49.962 25.918 54.744 20.022 54.4H19.902C13.632 54.308 4.032 50.476 2.534 37.8V0H0V70.134H2.534V50.358C4.652 51.99 10.866 56.43 19.734 56.43C29.04 56.43 35.496 52.03 37.494 50.362L37.466 56.4H40V0H37.466Z" fill="white"/>
-            </svg>
-          </div>
-        </div>
         <div className='main-image-mob'>
           <div className='main-image-mob--background'></div>
           <img className='main-image-mob--item' alt='afisha' src={afisha_mob} />
@@ -91,22 +83,22 @@ export default class extends Component {
         </div>
         <Suspense fallback={ <div>loading...</div> }>
           <Accordion className='main-collapsible--wrap' closeable={true} classParentString='main-collapsible--item'>
-            <div className='main-collapsible--item' data-trigger='Fields'>
+            <div className='main-collapsible--item' data-trigger='Fields' data-extra='Fields — основной кураторский блок фестиваля.'>
               <div className='main-collapsible--item-text'>
                 <span className='main-collapsible--artist'>Senyawa (Индонезия) /</span> <span className='main-collapsible--artist'>SHXCXCHCXSH (Швеция) /</span> <span className='main-collapsible--artist'> Carla Dal Forno (Австралия) /</span> <span className='main-collapsible--artist'> Kemialliset Ystävät (Финляндия) /</span> <span className='main-collapsible--artist'> SSTROM (Швеция) /</span> <span className='main-collapsible--artist'> Vladimir Martynov & Moa Pillar /</span> <span className='main-collapsible--artist'> Ishome /</span> <span className='main-collapsible--artist'> Kedr Livanskiy /</span> <span className='main-collapsible--artist'> Kymatic /</span> <span className='main-collapsible--artist'>ПТУ /</span> <span className='main-collapsible--artist'> Kate NV /</span> <span className='main-collapsible--artist'> Peter Theremin & Benjamin Skepper /</span> <span className='main-collapsible--artist'>Интурист /</span> <span className='main-collapsible--artist'> Bad Zu /</span> <span className='main-collapsible--artist'> Andrey Lee & Viktor Glazunov /</span> <span className='main-collapsible--artist'> X.Y.R. /</span> <span className='main-collapsible--artist'> oqbqbo /</span> <span className='main-collapsible--artist'> Yung Acid /</span> <span className='main-collapsible--artist'> EYWA3 /</span> <span className='main-collapsible--artist'> Narcissi /</span> <span className='main-collapsible--artist'> Salama /</span> <span className='main-collapsible--artist'>Vtgnike /</span> <span className='main-collapsible--artist'> Marzahn /</span> <span className='main-collapsible--artist'> Holy Palms /</span> <span className='main-collapsible--artist'>Алексей Бобровский /</span> <span className='main-collapsible--artist'> Denis Smagin /</span> <span className='main-collapsible--artist'> Broken Composers /</span>
               </div>
             </div>
-            <div className='main-collapsible--item' data-trigger='Ored Recordings'>
+            <div className='main-collapsible--item' data-trigger='Ored Recordings' data-extra='Ored Recordings — этнографический проект-лейбл из Кабардино-Балкарии.'>
               <div className='main-collapsible--item-text'>
                 <span className='main-collapsible--artist'>Хава Хамзатова /</span> <span className='main-collapsible--artist'> Заур Нагоев /</span> <span className='main-collapsible--artist'> Jrpjej /</span>
               </div>
             </div>
-            <div className='main-collapsible--item' data-trigger='Рихтерфест'>
+            <div className='main-collapsible--item' data-trigger='Рихтерфест' data-extra='Рихтерфест — международный фестиваль экспериментальной и импровизационной музыки, запущенный в Москве в 2014 году.'>
               <div className='main-collapsible--item-text'>
                 <span className='main-collapsible--artist'>Carl Stone (США) /</span> <span className='main-collapsible--artist'> Yussef Abouzeid (Египет) /</span> <span className='main-collapsible--artist'> Алексей Борисов & Максим Елизаров & Дмитрий Лапшин /</span> <span className='main-collapsible--artist'> Sanscreed Kanon /</span> <span className='main-collapsible--artist'> Rites Of Passage /</span> <span className='main-collapsible--artist'> Speedball Trio /</span> <span className='main-collapsible--artist'> Drumutabor (Андрей Ким, Петр Отоцкий, Сергей Болотин, Оксана Григорьева) /</span> <span className='main-collapsible--artist'> Drojji /</span> <span className='main-collapsible--artist'> Петяев-Петяев Квартет /</span>
               </div>
             </div>
-            <div className='main-collapsible--item' data-trigger='Diagonal'>
+            <div className='main-collapsible--item' data-trigger='Diagonal' data-extra='Diagonal — независимый лондонский лейбл, основанный Оскаром Пауэллом (Powell), представляющий нетривиальную новаторскую электронику клубного формата.'>
               <div className='main-collapsible--item-text'>
                 <span className='main-collapsible--artist'>HP (Rassell Haswell & Powell) /</span> <span className='main-collapsible--artist'> NHK /</span> <span className='main-collapsible--artist'> Sote /</span>
               </div>

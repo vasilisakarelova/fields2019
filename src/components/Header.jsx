@@ -18,15 +18,15 @@ export default class extends Component {
           </div>
           <div className='header-nav'>
             <div className='header-nav--item'>
-              <Link className='header-nav--link' to='/about'>
-                <div className='header-nav--item-title'>О фестивале</div>
-                <div className='header-nav--item-sub-title'>About the festival</div>
-              </Link>
-            </div>
-            <div className='header-nav--item'>
               <Link className='header-nav--link' to='/lineup'>
                 <div className='header-nav--item-title'>Лайнап</div>
                 <div className='header-nav--item-sub-title'>Line up</div>
+              </Link>
+            </div>
+            <div className='header-nav--item'>
+              <Link className='header-nav--link' to='/about'>
+                <div className='header-nav--item-title'>О фестивале</div>
+                <div className='header-nav--item-sub-title'>About the festival</div>
               </Link>
             </div>
             <div className='header-nav--item'>

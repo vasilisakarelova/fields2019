@@ -26,8 +26,10 @@
   display: block;
 
   @media (min-width: 984px) {
+    background: linear-gradient(75deg, #808f95, #c5ced4);
+    border-bottom: 1px solid #fff;
     display: grid;
-    padding: 87px 60px 0;
+    padding: 30px 60px;
     grid-template-columns: repeat(8, minmax(auto, 1fr));
     grid-column-gap: 30px;
   }
