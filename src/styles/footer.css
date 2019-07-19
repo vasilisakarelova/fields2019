@@ -6,7 +6,7 @@
   grid-column-gap: 20px;
 
   @media (min-width: 984px) {
-    height: 168px;
+    height: 200px;
     padding: 48px 60px 38px;
     grid-template-columns: repeat(8, minmax(auto, 1fr));
     grid-column-gap: 30px;
@@ -25,66 +25,96 @@
   }
 }
 
-.footer-logo {
-  padding-right: 5px;
+.footer-nav {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  flex: 1;
 
-  @media (min-width: 984px) {
-    padding-right: 11px;
-  }
-
-  &--link {
-    position: relative;
-    display: block;
-    width: 23px;
-    height: 23px;
+  &--balk-wrap {
+    display: none;
+    position: absolute;
+    width: calc(((100% - 120px) / 2) - 223px);
+    right: -60px;
+    bottom: -38px;
 
     @media (min-width: 984px) {
-      width: 30px;
-      height: 30px;
+      display: block;
     }
   }
 
-  &--img {
+  &--balk {
     position: relative;
     display: block;
     width: 100%;
   }
-}
 
-.footer-nav {
-  position: relative;
-  display: block;
-  flex: 1;
-
-  &--top {
+  &--socials {
     position: relative;
     display: flex;
-    justify-content: flex-end;
     flex-direction: row;
-    border-bottom: 1px solid #000;
-    padding-bottom: 18px;
 
     @media (min-width: 984px) {
-      border-bottom: 1px solid #000;
-      padding-bottom: 26px;
+      width: 100%;
+      border-bottom: 1px solid #fff;
+      margin-bottom: 11px;
+      padding-bottom: 34px;
     }
   }
 
-  &--bottom {
+  &--socials-item {
     position: relative;
     display: block;
-    padding-top: 5px;
+    margin-right: 45px;
+    width: 48px;
+    height: 48px;
+
+    svg {
+      position: relative;
+      display: block;
+    }
+  }
+
+  &--socials-link {
+    position: relative;
+    display: block;
+    width: 100%;
+  }
+
+  &--right {
+    position: relative;
+    display: block;
+
+    @media (min-width: 984px) {
+      width: 50%;
+    }
+  }
+
+  &--left {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+
+    @media (min-width: 984px) {
+      width: 50%;
+    }
   }
 
   &--link-wrap {
     position: relative;
     display: block;
+    line-height: 12px;
+
+    @media (min-width: 984px) {
+      line-height: 12px;
+    }
 
     &:nth-of-type(1) {
       padding-right: 11px;
 
       @media (min-width: 984px) {
-        padding-right: 102px;
+        padding-right: 92px;
       }
     }
   }
@@ -93,14 +123,15 @@
     font-family: Editorial Grotesk ;
     font-style: normal;
     font-weight: normal;
-    font-size: 15px;
-    line-height: 18px;
-    color: #000;
+    font-size: 12px;
+    line-height: 12px;
+    color: #FFFFFF;
+    text-transform: uppercase;
     text-decoration: none;
 
     @media (min-width: 984px) {
-      font-size: 18px;
-      line-height: 24px;
+      font-size: 12px;
+      line-height: 12px;
     }
 
     &:visited,
@@ -115,13 +146,14 @@
     font-family: Editorial Grotesk ;
     font-style: normal;
     font-weight: normal;
-    font-size: 15px;
-    line-height: 18px;
-    color: #000000;
+    font-size: 12px;
+    line-height: 12px;
+    color: #FFFFFF;
+    text-transform: uppercase;
 
     @media (min-width: 984px) {
-      font-size: 18px;
-      line-height: 24px;
+      font-size: 12px;
+      line-height: 12px;
     }
   }
 }
