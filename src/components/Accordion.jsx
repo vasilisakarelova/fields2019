@@ -9,7 +9,6 @@ export default class extends Component {
     super(props)
 
     this.state = {
-      extra: null,
       arrowShowed: false,
       transitionTime: PropTypes.number,
       easing: PropTypes.string,
@@ -46,24 +45,16 @@ export default class extends Component {
     })
   }
 
-  handleTriggerClick (position, extra) {
+  handleTriggerClick (position) {
     let closeAll = false
-    let text = null
 
     if (this.props.closeable) {
       closeAll = (!this.state.closeAll && position === this.state.openPosition);
     }
 
-    if (closeAll === true) {
-      text = null
-    } else {
-      text = extra
-    }
-
     this.setState({
       openPosition: position,
-      closeAll: closeAll,
-      extra: text
+      closeAll: closeAll
     })
   }
 
@@ -71,11 +62,10 @@ export default class extends Component {
     const nodes = this.props.children.map((node, index) => {
       const triggerWhenOpen = (node.props['data-trigger-when-open']) ? node.props['data-trigger-when-open'] : node.props['data-trigger']
       const triggerDisabled = (node.props['data-trigger-disabled']) || false
-      const extra = node.props['data-extra']
 
       return (<Collapsible
                 key={"Collapsible"+index}
-                handleTriggerClick={position => this.handleTriggerClick(position, extra)}
+                handleTriggerClick={position => this.handleTriggerClick(position)}
                 open={(!this.state.closeAll && this.state.openPosition === index)}
                 trigger={node.props['data-trigger']}
                 triggerWhenOpen={triggerWhenOpen}
@@ -98,7 +88,7 @@ export default class extends Component {
               <path d="M1 149.832L13 163V0.5H61" stroke="white"/>
             </svg>
           </div>
-          <div ref='desc' className='main-collapsible--desc-text'>Пятый фестиваль Fields собран из кураторских блоков и шоукейсов. Их формированием занимались музыкальные сообщества, звукозаписывающие лейблы и тематические музыкальные медиа<br/><br/>{this.state.extra}</div>
+          <div ref='desc' className='main-collapsible--desc-text'>Пятый фестиваль Fields собран из кураторских блоков и шоукейсов. Их формированием занимались музыкальные сообщества, звукозаписывающие лейблы и тематические музыкальные медиа</div>
         </div>
         <div className={`${this.props.className}-inner`}>{nodes}</div>
       </div>

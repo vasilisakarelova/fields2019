@@ -178,8 +178,8 @@
 
     @media (min-width: 984px) {
       width: 60%;
-      font-size: 18px;
-      line-height: 24px;
+      font-size: 23px;
+      line-height: 33px;
     }
   }
 
@@ -190,6 +190,27 @@
 
     @media (min-width: 984px) {
       padding-bottom: 30px;
+    }
+  }
+
+  &--item-desc {
+    position: relative;
+    font-family: Editorial Grotesk ;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+
+    @media (min-width: 984px) {
+      font-size: 23px;
+      line-height: 33px;
+      padding: 40px 0;
+      max-width: 60%;
+    }
+
+    p {
+      margin: 0;
     }
   }
 
