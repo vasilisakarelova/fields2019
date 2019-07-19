@@ -74,10 +74,8 @@
     transition: opacity .4s linear; */
 
     @media (min-width: 984px) {
-      width: 75%;
+      width: 100%;
       left: 50%;
-      top: auto;
-      bottom: 0;
       transform: translateX(-50%);
     }
   }

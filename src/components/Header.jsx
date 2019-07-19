@@ -15,6 +15,17 @@ export default class extends Component {
             <Link className='header-logo--link' to='/'>
               <img className='header-logo--img' src={logo} alt='fields logo' />
             </Link>
+            <div className='header-logo--date-wrap'>
+              <div className='header-logo--date'>10 — 11<br/>августа 2019</div>
+              <div className='header-logo--date-separate'>
+                <svg width="100%" height="100%" viewBox="0 0 29 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 55L28 1" stroke="white"/>
+                </svg>
+              </div>
+              <div className='header-logo--date-address'>
+                Москва<br/>Шарикоподшипниковская<br/>13 с32
+              </div>
+            </div>
           </div>
           <div className='header-nav'>
             <div className='header-nav--item'>
