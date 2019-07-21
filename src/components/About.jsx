@@ -4,13 +4,19 @@ import { YMaps, Map, Placemark } from 'react-yandex-maps'
 import Link from '../helpers/Link'
 import Slider from 'react-slick'
 
-import placeholder from '../assets/placeholder_2.png'
+import mutabor1 from '../assets/mutabor1.jpg'
+import mutabor2 from '../assets/mutabor2.jpg'
+import mutabor3 from '../assets/mutabor3.jpg'
+import mutabor4 from '../assets/mutabor4.jpg'
+import mutabor5 from '../assets/mutabor5.jpg'
+import mutabor6 from '../assets/mutabor6.jpg'
+import mutabor7 from '../assets/mutabor7.jpg'
 
 export default class extends Component {
   constructor (props) {
     super(props)
 
-    const height = (window.innerWidth < 984) ? '100%' : '410px'
+    const height = (window.innerWidth < 984) ? '100%' : '505px'
 
     this.state = {
       mapHeight: height
@@ -23,13 +29,13 @@ export default class extends Component {
 
   componentDidMount () {
     document.addEventListener('resized', () => {
-      if (window.innerWidth < 984 && this.state.mapHeight === '410px') {
+      if (window.innerWidth < 984 && this.state.mapHeight === '505px') {
         this.setState({
           mapHeight: '100%'
         })
       } else if (window.innerWidth >= 984 && this.state.mapHeight === '100%') {
         this.setState({
-          mapHeight: '410px'
+          mapHeight: '505px'
         })
       }
     })
@@ -52,50 +58,44 @@ export default class extends Component {
         <Helmet>
           <meta charSet="utf-8" />
           <title>Fields | About</title>
-          <meta name="author" content="Outer Practice" />
-          <meta name="description" content="Revolving around website and print matters." />
-          <meta name="copyright" content="Outer Practice" />
+            <meta name="author" content="Fields & Mutabor" />
+            <meta name="copyright" content="Fields & Mutabor" />
         </Helmet>
         <div className='about-inner'>
           <div className='about-title--wrap'>
             <div className='about-title--name'>Fields <br/>2019</div>
-            <div className='about-title--date'>10 — 11 <br/>августа</div>
-          </div>
-          <div className='about-text--address'>
-            <div className='about-text--mutabor'>
-              <svg width="100%" height="100%" viewBox="0 0 28 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M26.2262 0V27.4925C25.886 37.0437 18.1426 40.5893 14.0154 40.3342H13.9314C9.5424 40.266 2.8224 37.4248 1.7738 28.0264V0H0V52H1.7738V37.3373C3.2564 38.5474 7.6062 41.8393 13.8138 41.8393C20.328 41.8393 24.8472 38.577 26.2458 37.3403L26.2262 41.8171H28V0H26.2262Z" fill="black"/>
-              </svg>
-            </div>
-            <p><span>АДРЕС: <br/></span>Москва, <br/>Шарикоподшипниковская ул, <br/>д. 13, с32</p>
           </div>
           <div className='about-text--wrap'>
             <div className='about-text--self'>
-              <p>Пятый выпуск фестиваля изобретательной музыки Fields пройдет в новом пространстве команд Arma и «Рабица» — Mutabor. Его программа охватит временной интервал в два дня и одну ночь, а само действо развернется на трех параллельных сценах.</p>
               <p>В программе: десяток с лишним зарубежных гостей, свыше 30 живых выступлений, долгожданные российские премьеры и внезапные коллаборации. Кураторское начало, как и прежде, превалирует над трендами: важная роль на фестивале Fields отводится неочевидным героям независимой сцены и серым кардиналам авангарда.</p>
+              <p>В этом году, помимо основной программы, фестиваль включает кураторские блоки и шоукейсы, равномерно распыленные по программной сетке. За их формирование отвечают музыкальные сообщества, звукозаписывающие лейблы и тематические музыкальные медиа: Diagonal Records, The Wire Soundsystem, Рихтерфест, Ored Recordings, New New World Radio.</p>
               <div className='about-text--slider-wrap'>
                 <div className='about-text--slider'>
                   <Slider {...settings}>
                     <div className='about-text--slider-item'>
-                      <img alt='placeholder' src={placeholder}/>
-                      <span style={{color: '#000', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', position: 'absolute'}}>1</span>
+                      <img alt='placeholder' src={mutabor1}/>
                     </div>
                     <div className='about-text--slider-item'>
-                      <img alt='placeholder' src={placeholder}/>
-                      <span style={{color: '#000', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', position: 'absolute'}}>2</span>
+                      <img alt='placeholder' src={mutabor2}/>
                     </div>
                     <div className='about-text--slider-item'>
-                      <img alt='placeholder' src={placeholder}/>
-                      <span style={{color: '#000', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', position: 'absolute'}}>3</span>
+                      <img alt='placeholder' src={mutabor3}/>
                     </div>
                     <div className='about-text--slider-item'>
-                      <img alt='placeholder' src={placeholder}/>
-                      <span style={{color: '#000', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', position: 'absolute'}}>4</span>
+                      <img alt='placeholder' src={mutabor4}/>
+                    </div>
+                    <div className='about-text--slider-item'>
+                      <img alt='placeholder' src={mutabor5}/>
+                    </div>
+                    <div className='about-text--slider-item'>
+                      <img alt='placeholder' src={mutabor6}/>
+                    </div>
+                    <div className='about-text--slider-item'>
+                      <img alt='placeholder' src={mutabor7}/>
                     </div>
                   </Slider>
                 </div>
               </div>
-              <p>В этом году, помимо основной программы, фестиваль включает кураторские блоки и шоукейсы, равномерно распыленные по программной сетке. За их формирование отвечают музыкальные сообщества, звукозаписывающие лейблы и тематические музыкальные медиа: Diagonal Records, The Wire Soundsystem, Рихтерфест, Ored Recordings, New New World Radio.</p>
             </div>
           </div>
           <div className='about-link--next'>
@@ -109,10 +109,10 @@ export default class extends Component {
               </div>
             </Link>
           </div>
+          <div className='about-extra-text--wrap'>
+            <p>Пятый выпуск фестиваля изобретательной музыки Fields пройдет в новом пространстве команд Arma и «Рабица» — Mutabor. Его программа охватит временной интервал в два дня и одну ночь, а само действо развернется на трех параллельных сценах.</p>
+          </div>
           <div className='about-map--wrap'>
-            <div className='about-extra-text--wrap'>
-              <p>На проятежении своей истории Fields был уличным, парковым open-air событием. В этом году мы пробуем много новых форматов, в том числе и фестиваль на закрытой локации — Mutabor</p>
-            </div>
             <YMaps>
               <Map
                 width='100%'

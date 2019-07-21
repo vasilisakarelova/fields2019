@@ -105,3 +105,37 @@
     }
   }
 }
+
+.tickets-link {
+  position: relative;
+  display: block;
+  font-family: Editorial Grotesk ;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 23px;
+  line-height: 32px;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+  text-decoration: none;
+
+  @media (min-width: 984px) {
+    font-size: 23px;
+    line-height: 32px;
+  }
+
+  &:active,
+  &:focus,
+  &:visited {
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+
+  &--wrap {
+    position: relative;
+    display: block;
+
+    @media (min-width: 984px) {
+      grid-column: 2/9;
+    }
+  }
+}

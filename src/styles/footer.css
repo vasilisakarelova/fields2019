@@ -98,6 +98,7 @@
 
     @media (min-width: 984px) {
       width: 50%;
+      z-index: 1;
     }
   }
 

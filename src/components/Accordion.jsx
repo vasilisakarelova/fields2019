@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Collapsible from 'react-collapsible'
 
-import scrollBy from '../helpers/scrollBy.js'
-
 export default class extends Component {
   constructor (props) {
     super(props)
@@ -36,6 +34,8 @@ export default class extends Component {
 
   componentDidMount () {
     document.addEventListener('scrolled', (ev) => {
+      if (this.refs.arrow === undefined) return
+
       if (this.refs.arrow.getBoundingClientRect().top <= (window.innerHeight / 2) && !this.state.arrowShowed) {
         this.refs.arrow.classList.add('animate')
         this.setState({
@@ -78,7 +78,7 @@ export default class extends Component {
     });
 
     return (
-      <div className={this.props.className} ref='accordion'>
+      <div className={this.props.className} ref='accordion' id='lineup'>
         <div className='main-collapsible--desc-wrap' ref='descWrap'>
           <div className='main-collapsible--desc-arrow'>
             <svg className='main-collapsible--desc-arrow-svg' ref='arrow' width="100%" height="100%" viewBox="0 0 472 44" fill="none" xmlns="http://www.w3.org/2000/svg">

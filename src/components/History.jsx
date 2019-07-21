@@ -4,6 +4,9 @@ import Link from '../helpers/Link'
 import Slider from 'react-slick'
 import Carousel, { Modal, ModalGateway } from 'react-images'
 
+import splash01 from '../assets/history01.png'
+import splash02 from '../assets/history02.png'
+
 import history2014_1 from '../assets/2014/s3564.jpg'
 import history2014_2 from '../assets/2014/s3593.jpg'
 import history2014_3 from '../assets/2014/s3642.jpg'
@@ -37,7 +40,7 @@ import history2016_8 from '../assets/2016/GG2A2531.jpg'
 import history2016_9 from '../assets/2016/14324635_1120401867995952_662339614431447010_o.jpg'
 import history2016_10 from '../assets/2016/14242283_1120402141329258_4992477523785390084_o.jpg'
 
-import history2018_1 from '../assets/2018/Filds-6543.jpg'
+import history2018_1 from '../assets/2018/Filds-8194.jpg'
 import history2018_2 from '../assets/2018/Filds-6786.jpg'
 import history2018_3 from '../assets/2018/Filds-6916.jpg'
 import history2018_4 from '../assets/2018/Filds-7225.jpg'
@@ -128,11 +131,11 @@ export default class extends Component {
         <Helmet>
           <meta charSet="utf-8" />
           <title>Fields | History</title>
-          <meta name="author" content="Outer Practice" />
-          <meta name="description" content="Revolving around website and print matters." />
-          <meta name="copyright" content="Outer Practice" />
+            <meta name="author" content="Fields & Mutabor" />
+            <meta name="copyright" content="Fields & Mutabor" />
         </Helmet>
         <div className='history-inner'>
+          <div className='history-title--wrap'>История</div>
           <div className='history-slider--wrap'>
             <div className='history-slider'>
               <Slider {...settings}>
@@ -152,11 +155,12 @@ export default class extends Component {
             </div>
           </div>
           <div className='history-text--wrap'>
-            <div className='history-text--title'>История</div>
             <div className='history-text--self'>
               <div className='history-text--block'>
-                <div className='history-text--year'>2014</div>
-                <p>12-13 июля | Парк искусств «Музеон»</p>
+                <div className='history-splash--01'>
+                  <img src={splash01} alt='liquid splash'/>
+                </div>
+                <div className='history-text--year'>2014 <span className='date'>12-13 июля</span><span className='place'>Парк искусств «Музеон»</span></div>
                 <p>Фестиваль Fields пришел в Москву в 2014 году. Местом проведения стал парк искусств «Музеон», совсем недавно прошедший этап реновации. Получивший поддержку московского Департамента Культуры, фестиваль поставил перед собой амбициозную цель — реформировать сложившуюся практику городских мероприятий, сделав упор на новое и неизведанное. Сохраняя свободный вход для всех желающих, фестиваль предложил горожанам окунуться в мир изобретательной музыки и авангарда.</p>
                 <p>Описывая идею первого выпуска, фестиваль ссылался на слоган культового британского журнала об авангардной музыке The Wire: «Adventures In Sound And Music» («Приключения в звуке и музыке»). Хедлайнерами фестиваля стали берлинский неоклассический пианист Hauschka, исландская виолончелистка Хильдур Гуднадоттир (Hildur Guðnadóttir), редкое трио американского композитора-минималиста Шарлеманя Палестина, финского нойз-импровизатора Мики Вайнио и бельгийского перкуссиониста Эрика Тилеманса, а также британский мультиинструменталист Talvihorros.</p>
                 <p>Локальную сцену представили не менее важные герои: Антон Маскелиаде, новосибирский эмбиент-фолк-проект Foresteppe, екатеринбургская группа «4 Позиции Бруно», московский фри джаз бэнд «Бром» и многие другие.</p>
@@ -171,10 +175,10 @@ export default class extends Component {
                     <img alt='2014' src={history2014_3} />
                   </div>
                   <div className='history-text--pictures-single' onClick={ev => this.toggleModal(3)} >
-                    <img alt='2014' src={history2014_4} />
+                    <img alt='2014' src={history2014_8} />
                   </div>
                   <div className='history-text--pictures-single' onClick={ev => this.toggleModal(4)} >
-                    <img alt='2014' src={history2014_5} />
+                    <img alt='2014' src={history2014_9} />
                   </div>
                   <div className='history-text--pictures-single' onClick={ev => this.toggleModal(5)} >
                     <img alt='2014' src={history2014_6} />
@@ -183,16 +187,18 @@ export default class extends Component {
                     <img alt='2014' src={history2014_7} />
                   </div>
                   <div className='history-text--pictures-single' onClick={ev => this.toggleModal(7)} >
-                    <img alt='2014' src={history2014_8} />
+                    <img alt='2014' src={history2014_4} />
                   </div>
                   <div className='history-text--pictures-single' onClick={ev => this.toggleModal(8)} >
-                    <img alt='2014' src={history2014_9} />
+                    <img alt='2014' src={history2014_5} />
                   </div>
                 </div>
               </div>
               <div className='history-text--block'>
-                <div className='history-text--year'>2015</div>
-                <p>5 сентября | Парк искусств «Музеон»</p>
+                <div className='history-splash--02'>
+                  <img src={splash02} alt='liquid splash'/>
+                </div>
+                <div className='history-text--year'>2015 <span className='date'>5 сентября</span><span className='place'>Парк искусств «Музеон»</span></div>
                 <p>Второй выпуск фестиваля ознаменовал новый этап: с 2015 года Fields стал частью культурно-развлекательной программы, приуроченной ко Дню города Москвы. Ровно на один день парк искусств «Музеон» превратился в поле для звуковых экспериментов, а программа фестиваля разрослась до трех независимых сцен.</p>
                 <p>На главной сцене состоялись выступления британского фолк-композитора Джеймса Блэкшо, норвежского фьюжн-гитариста Стайана Урхайма, российской электронной дивы Ishome и многих других. Знаковой премьерой стало выступление британского дуэта patten, который представил эпическое аудиовизуальное шоу с лазерами.</p>
                 <p>Важным событием стала экспериментальная программа фестиваля, состоявшаяся на отдельной сцене. Британский электронный авангардист Марк Фелл представил совместную программу с итальянским виолончелистом Сандро Муссидой, а берлинский музыкант и звукоинженер Рашад Беккер представил свой модулярный лайв-перформанс.</p>
@@ -228,8 +234,7 @@ export default class extends Component {
                 </div>
               </div>
               <div className='history-text--block'>
-                <div className='history-text--year'>2016</div>
-                <p>9 сентября | Парк искусств «Музеон», Сад Баумана</p>
+                <div className='history-text--year'>2016 <span className='date'>9 сентября</span><span className='place'>Парк искусств «Музеон», Сад Баумана</span></div>
                 <p>Третий выпуск фестиваля не стал ограничиваться одним парком — программа фестиваля распределилась равномерно между уже традиционным «Музеоном» и более камерным Садом Баумана.</p>
                 <p>В рамках основной программы фестиваля в «Музеоне» состоялось несколько знаковых премьер. Аргентинский электронный музыкант Murcof и французская пианистка Ванесса Вагнер исполнили интерпретации работ композиторов 20 века: от Эрика Сати и Арво Пярта до Брайана Ино и Aphex Twin. Впервые в России выступил легендарный фолк-музыкант Майк Купер, представивший свою лайв-программу с электроникой. Лондонский продюсер Heatsick представил свое видение лоуфайного хауса, исполнив живой перформанс лишь на одном синтезаторе Casio и мараканах.</p>
                 <p>Тем временем в Саду Баумана состоялась камерная программа Piano FIelds, ориентированная на передовую фортепианную музыку. Здесь выступили американский джазовый пианист Джейми Сафт, французский эмбиент-музыкант Сильвэ Шово, неоклассический пианист Миша Мищенко, композиторы-минималисты Владимир Мартынов и Петру Айду.</p>

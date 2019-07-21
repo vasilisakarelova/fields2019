@@ -1,6 +1,9 @@
 import React, { Component, Suspense } from 'react'
 import Accordion from './Accordion.jsx'
 
+import scrollBy from '../helpers/scrollBy.js'
+import getBrowser from '../helpers/getBrowser.js'
+
 import afisha_mob from '../assets/afisha-mob.png'
 import balk_left from '../assets/desktop/бревно слева.png'
 import balk_right from '../assets/desktop/бревно справа.png'
@@ -27,10 +30,35 @@ export default class extends Component {
 
     this.checkSiblings = this.checkSiblings.bind(this)
     this.setAfishaReady = this.setAfishaReady.bind(this)
+    this.checkForLineup = this.checkForLineup.bind(this)
   }
 
   componentWillMount () {
     window.scrollTo(0, 0)
+  }
+
+  checkForLineup (browser) {
+    if (window.location.hash === '#lineup') {
+      if (browser === 'Chrome') {
+        setTimeout(() => {
+          scrollBy(document.documentElement, document.querySelector('#lineup').offsetTop, 400)
+        }, 500)
+      } else {
+        setTimeout(() => {
+          scrollBy(document.body, document.querySelector('#lineup').offsetTop, 400)
+        }, 500)
+      }
+    }
+  }
+
+  componentDidMount () {
+    const browser = getBrowser().name
+    this.checkForLineup(browser)
+  }
+
+  componentDidUpdate () {
+    const browser = getBrowser().name
+    this.checkForLineup(browser)
   }
 
   setAfishaReady (ev) {
@@ -90,13 +118,7 @@ export default class extends Component {
             <div className='main-collapsible--item' data-trigger='Fields'>
               <div className='main-collapsible--item-desc'><p>— основной кураторский блок фестиваля.</p></div>
               <div className='main-collapsible--item-text'>
-                <span className='main-collapsible--artist'>Senyawa (Индонезия) /</span> <span className='main-collapsible--artist'>SHXCXCHCXSH (Швеция) /</span> <span className='main-collapsible--artist'> Carla Dal Forno (Австралия) /</span> <span className='main-collapsible--artist'> Kemialliset Ystävät (Финляндия) /</span> <span className='main-collapsible--artist'> SSTROM (Швеция) /</span> <span className='main-collapsible--artist'> Vladimir Martynov & Moa Pillar /</span> <span className='main-collapsible--artist'> Ishome /</span> <span className='main-collapsible--artist'> Kedr Livanskiy /</span> <span className='main-collapsible--artist'> Kymatic /</span> <span className='main-collapsible--artist'>ПТУ /</span> <span className='main-collapsible--artist'> Kate NV /</span> <span className='main-collapsible--artist'> Peter Theremin & Benjamin Skepper /</span> <span className='main-collapsible--artist'>Интурист /</span> <span className='main-collapsible--artist'> Bad Zu /</span> <span className='main-collapsible--artist'> Andrey Lee & Viktor Glazunov /</span> <span className='main-collapsible--artist'> X.Y.R. /</span> <span className='main-collapsible--artist'> oqbqbo /</span> <span className='main-collapsible--artist'> Yung Acid /</span> <span className='main-collapsible--artist'> EYWA3 /</span> <span className='main-collapsible--artist'> Narcissi /</span> <span className='main-collapsible--artist'> Salama /</span> <span className='main-collapsible--artist'>Vtgnike /</span> <span className='main-collapsible--artist'> Marzahn /</span> <span className='main-collapsible--artist'> Holy Palms /</span> <span className='main-collapsible--artist'>Алексей Бобровский /</span> <span className='main-collapsible--artist'> Denis Smagin /</span> <span className='main-collapsible--artist'> Broken Composers /</span>
-              </div>
-            </div>
-            <div className='main-collapsible--item' data-trigger='Diagonal'>
-              <div className='main-collapsible--item-desc'><p>— независимый лондонский лейбл, основанный Оскаром Пауэллом (Powell), представляющий нетривиальную новаторскую электронику клубного формата.</p></div>
-              <div className='main-collapsible--item-text'>
-                <span className='main-collapsible--artist'>HP (Rassell Haswell & Powell) /</span> <span className='main-collapsible--artist'> NHK /</span> <span className='main-collapsible--artist'> Sote /</span>
+                <span className='main-collapsible--artist'>Senyawa (Индонезия) /</span> <span className='main-collapsible--artist'>SHXCXCHCXSH (Швеция) /</span> <span className='main-collapsible--artist'> Carla Dal Forno (Австралия) /</span> <span className='main-collapsible--artist'> Kemialliset Ystävät (Финляндия) /</span> <span className='main-collapsible--artist'> SSTROM (Швеция) /</span> <span className='main-collapsible--artist'> Vladimir Martynov & Moa Pillar /</span> <span className='main-collapsible--artist'> Ishome /</span> <span className='main-collapsible--artist'> Kedr Livanskiy /</span> <span className='main-collapsible--artist'> Kymatic /</span> <span className='main-collapsible--artist'>ПТУ /</span> <span className='main-collapsible--artist'> Kate NV /</span> <span className='main-collapsible--artist'> Misha Mishenko /</span> <span className='main-collapsible--artist'> Peter Theremin & Benjamin Skepper /</span> <span className='main-collapsible--artist'>Интурист /</span> <span className='main-collapsible--artist'> Bad Zu /</span> <span className='main-collapsible--artist'> Andrey Lee & Viktor Glazunov /</span> <span className='main-collapsible--artist'> X.Y.R. (Санкт-Петербург) /</span> <span className='main-collapsible--artist'> oqbqbo (Дания) /</span> <span className='main-collapsible--artist'> Abelle /</span> <span className='main-collapsible--artist'> Yung Acid /</span> <span className='main-collapsible--artist'> EYWA3 /</span> <span className='main-collapsible--artist'> Narcissi (Краснодар) /</span> <span className='main-collapsible--artist'> Foresteppe (Новосибирск) / </span> <span className='main-collapsible--artist'> Sestrica / </span> <span className='main-collapsible--artist'> Salama (Нижний Новгород) /</span> <span className='main-collapsible--artist'>Vtgnike /</span> <span className='main-collapsible--artist'> Marzahn /</span> <span className='main-collapsible--artist'> Solo Operator & Brinstaar / </span> <span className='main-collapsible--artist'> Holy Palms /</span> <span className='main-collapsible--artist'> Zurkas Tepla / </span> <span className='main-collapsible--artist'> Symphocat & Improv Choir (Ростов) / </span> <span className='main-collapsible--artist'> S.A.D. / </span> <span className='main-collapsible--artist'> LINJA band / </span> <span className='main-collapsible--artist'> REKK&KUTOBOI / </span> <span className='main-collapsible--artist'>Алексей Бобровский /</span> <span className='main-collapsible--artist'> Lipelis / </span> <span className='main-collapsible--artist'> Denis Smagin /</span> <span className='main-collapsible--artist'> Broken Composers /</span>
               </div>
             </div>
             <div className='main-collapsible--item' data-trigger='Ored Recordings'>
@@ -111,15 +133,17 @@ export default class extends Component {
                 <span className='main-collapsible--artist'>Carl Stone (США) /</span> <span className='main-collapsible--artist'> Yussef Abouzeid (Египет) /</span> <span className='main-collapsible--artist'> Алексей Борисов & Максим Елизаров & Дмитрий Лапшин /</span> <span className='main-collapsible--artist'> Sanscreed Kanon /</span> <span className='main-collapsible--artist'> Rites Of Passage /</span> <span className='main-collapsible--artist'> Speedball Trio /</span> <span className='main-collapsible--artist'> Drumutabor (Андрей Ким, Петр Отоцкий, Сергей Болотин, Оксана Григорьева) /</span> <span className='main-collapsible--artist'> Drojji /</span> <span className='main-collapsible--artist'> Петяев-Петяев Квартет /</span>
               </div>
             </div>
+            <div className='main-collapsible--item' data-trigger='Diagonal'>
+              <div className='main-collapsible--item-desc'><p>— независимый лондонский лейбл, основанный Оскаром Пауэллом (Powell), представляющий нетривиальную новаторскую электронику клубного формата.</p></div>
+              <div className='main-collapsible--item-text'>
+                <span className='main-collapsible--artist'>HP (Rassell Haswell & Powell) /</span> <span className='main-collapsible--artist'> NHK /</span> <span className='main-collapsible--artist'> Sote /</span>
+              </div>
+            </div>
             <div className='main-collapsible--item' data-trigger='New New World Radio'>
               <div className='main-collapsible--item-desc'><p>— свободное от цензуры интернет-радио с подстрочником «постжанры, постгеография, постполитика».</p></div>
               <div className='main-collapsible--item-text'>
-                <span className='main-collapsible--artist'> Graham Dunning (Великобритания) /</span>
+                <span className='main-collapsible--artist'> The Wire Soundsystem: Chris Bohn, Shane Woolman, Emily Bick (Великобритания) /</span> <span className='main-collapsible--artist'> Graham Dunning (Великобритания) /</span> <span className='main-collapsible--artist'> Sonestrose /</span> <span className='main-collapsible--artist'> Виды Рыб / </span> <span className='main-collapsible--artist'> Arthur Kuzmin / </span> <span className='main-collapsible--artist'> Denis Smagin / </span>
               </div>
-            </div>
-            <div className='main-collapsible--item' data-trigger='The Wire Soundsystem'>
-              <div className='main-collapsible--item-desc'><p>— команда журналистов-диджеев старейшего британского музыкального издания, посвященного авангардной музыке.</p></div>
-              <div className='main-collapsible--item-text'></div>
             </div>
           </Accordion>
         </Suspense>
