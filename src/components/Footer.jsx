@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import balk from '../assets/footer-balk.png'
+import balk from '../assets/footer-balk_2.png'
 import splash03 from '../assets/history03.png'
 
 export default class extends Component {
@@ -45,8 +45,7 @@ export default class extends Component {
               <div className='footer-nav--copyright'>Fields Festival 2019</div>
             </div>
             <div className='footer-nav--left'>
-              <div className='footer-nav--link-wrap'><a className='footer-nav--link' href='mailto:info@fields.agency'>info@fields.agency</a></div>
-              <div className='footer-nav--link-wrap'><a className='footer-nav--link' href='mailto:forpress@fields.agency'>forpress@fields.agency</a></div>
+              <div className='footer-nav--link-wrap'><a className='footer-nav--link' href='mailto:vr@fields.agency'>vr@fields.agency</a></div>
             </div>
             <div className='footer-nav--balk-wrap'>
               { this.props.page === '/history'

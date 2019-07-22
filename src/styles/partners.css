@@ -10,12 +10,13 @@
     text-transform: uppercase;
     font-feature-settings: 'tnum' on, 'onum' on;
     color: #000000;
+    padding-top: 70px;
 
     @media (min-width: 984px) {
+      padding-top: 170px;
       font-size: 88px;
       line-height: 88px;
       margin-bottom: 70px;
-      grid-row: 1;
       grid-column: 2 / 9;
     }
   }

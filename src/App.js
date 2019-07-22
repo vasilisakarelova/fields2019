@@ -8,7 +8,6 @@ import HeaderMob from './components/HeaderMob.jsx'
 import Footer from './components/Footer.jsx'
 const Main = lazy(() => import('./components/Main.jsx'))
 const About = lazy(() => import('./components/About.jsx'))
-const Partners = lazy(() => import('./components/Partners.jsx'))
 const Tickets = lazy(() => import('./components/Tickets.jsx'))
 const History = lazy(() => import('./components/History.jsx'))
 
@@ -45,10 +44,7 @@ class App extends Component {
     })
 
     page('/partners', (ctx, next) => {
-      this.setState({
-        route: ctx.path,
-        container: <Partners />
-      })
+      page.redirect('/#partners')
 
       this.openMobMenu(false)
     })

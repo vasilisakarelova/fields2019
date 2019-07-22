@@ -97,11 +97,9 @@
   &--wrap-inner {
     display: flex;
     flex-direction: column;
-    padding-bottom: 70px;
 
     @media (min-width: 984px) {
       padding-top: 80px;
-      padding-bottom: 170px;
     }
   }
 
