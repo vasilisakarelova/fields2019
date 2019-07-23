@@ -309,7 +309,7 @@ export default class extends Component {
           <div className='about-link--prev'>
             <Link className='about-link' to='/lineup'>
               <div className='about-link--arrow'>
-                <svg width="92" height="35" viewBox="0 0 92 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="100%" height="100%" viewBox="0 0 92 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M19.7024 33.959L0.999963 17.0908L19.7024 0.540844" stroke="white"/>
                   <path d="M0.999979 17.0908L91.9325 17.0908" stroke="white"/>
                 </svg>

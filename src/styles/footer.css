@@ -11,6 +11,20 @@
     grid-template-columns: repeat(8, minmax(auto, 1fr));
     grid-column-gap: 30px;
   }
+
+  &.is-splash {
+    background-position: right bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('./assets/history03.png');
+  }
+
+  &.is-balk {
+    background-position: right bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('./assets/footer-balk_2.png');
+  }
 }
 
 .footer-inner {

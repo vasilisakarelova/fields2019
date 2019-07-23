@@ -1,12 +1,10 @@
 import React, { Component } from 'react'
-
-import balk from '../assets/footer-balk_2.png'
-import splash03 from '../assets/history03.png'
+import * as css from 'classnames'
 
 export default class extends Component {
   render () {
     return (
-      <div className='footer-wrap'>
+      <div className={css('footer-wrap', { 'is-splash': this.props.page === '/history', 'is-balk': this.props.page !== '/history' })}>
         <div className='footer-inner'>
           <div className='footer-nav'>
             <div className='footer-nav--socials'>
@@ -46,12 +44,6 @@ export default class extends Component {
             </div>
             <div className='footer-nav--left'>
               <div className='footer-nav--link-wrap'><a className='footer-nav--link' href='mailto:vr@fields.agency'>vr@fields.agency</a></div>
-            </div>
-            <div className='footer-nav--balk-wrap'>
-              { this.props.page === '/history'
-                ? <img className='footer-nav--balk' alt='splash03' src={splash03}/>
-                : <img className='footer-nav--balk' alt='balk' src={balk}/>
-              }
             </div>
           </div>
         </div>

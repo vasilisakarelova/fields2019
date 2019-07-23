@@ -12,7 +12,7 @@ export default class extends Component {
           <div className='header-logo'>
             <Link className='header-logo--link' to='/'>
               <svg width="100%" height="100%" viewBox="0 0 146 45" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0)">
+                <g clipPath="url(#logoFields)">
                   <path d="M0 43.8547H4.90553V26.1455H24.2512V21.4516H4.90553V8.29374H28.5415V3.61568H0V43.8547Z" fill="black"/>
                   <path d="M38.5326 15.1976H33.6201V43.8547H38.5326V15.1976Z" fill="black"/>
                   <path d="M58.8593 12.2744C50.2372 12.2744 43.8086 19.1783 43.8086 28.4302C43.8086 37.7433 50.4906 44.4615 59.1773 44.4615C66.3478 44.4615 71.2257 39.8582 72.251 33.9121H67.6104C66.5713 37.3086 63.4077 39.7495 59.1842 39.7495C53.7003 39.7495 49.3086 35.6737 48.7118 29.6711H72.4169C73.0782 18.4446 67.8524 12.2744 58.8593 12.2744ZM49.0436 25.0202C50.2625 20.1904 53.8547 16.9864 58.5459 16.9864C63.3293 16.9864 66.9837 19.8145 67.3985 25.0202H49.0436Z" fill="black"/>
@@ -22,7 +22,7 @@ export default class extends Component {
                   <path d="M33.3594 6.3872V13.0669C34.6212 13.0669 35.8706 12.8227 37.0363 12.3482C38.202 11.8736 39.2613 11.1781 40.1535 10.3014C41.0457 9.42457 41.7534 8.38368 42.2363 7.2381C42.7191 6.09253 42.9677 4.86471 42.9677 3.62474H36.175C35.8055 3.62415 35.4395 3.69516 35.0979 3.83372C34.7563 3.97228 34.4459 4.17567 34.1843 4.43225C33.9228 4.68882 33.7154 4.99355 33.5738 5.32901C33.4322 5.66446 33.3594 6.02405 33.3594 6.3872Z" fill="black"/>
                 </g>
                 <defs>
-                  <clipPath id="clip0">
+                  <clipPath id="logoFields">
                     <rect width="146" height="44" fill="white" transform="translate(0 0.5)"/>
                   </clipPath>
                 </defs>
@@ -40,7 +40,7 @@ export default class extends Component {
           <div className='header-nav'>
             <div className='header-nav--item'>
               <Link className='header-nav--link' to='/lineup'>
-                <div className='header-nav--item-title'>Лайнап</div>
+                <div className='header-nav--item-title'>Лайн-ап</div>
                 <div className='header-nav--item-sub-title'>Line up</div>
               </Link>
             </div>
