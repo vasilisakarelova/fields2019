@@ -1,4 +1,5 @@
 import React, { Component, Suspense } from 'react'
+import LazyLoad from 'react-lazyload'
 import Accordion from './Accordion.jsx'
 
 import scrollBy from '../helpers/scrollBy.js'
@@ -116,52 +117,63 @@ export default class extends Component {
           <img className='main-image-mob--item' alt='afisha' src={afisha_mob} />
         </div>
         <div className='main-image'>
-          <img className='main-image--item main-image--foil' alt='foil' src={foil} />
-          <img className='main-image--item main-image--balk_left' alt='balk_left' src={balk_left} />
-          <img className='main-image--item main-image--balk_right' alt='balk_right' src={balk_right} />
-          <img className='main-image--item main-image--liquid_left' alt='liquid_left' src={liquid_left} />
-          <img className='main-image--item main-image--liquid_right' alt='liquid_right' src={liquid_right} />
-          <img className='main-image--item main-image--leaf' alt='leaf' src={leaf} />
-          <img className='main-image--item main-image--splash_on_tree_left' alt='splash_on_tree_left' src={splash_on_tree_left} />
-          <img className='main-image--item main-image--splash_on_tree_right' alt='splash_on_tree_right' src={splash_on_tree_right} />
-          <img className='main-image--item main-image--sphere' alt='sphere' src={sphere} />
-          <img className='main-image--item main-image--shipi1' alt='shipi1' src={shipi1} />
-          <img className='main-image--item main-image--shipi2' alt='shipi2' src={shipi2}/>
-          <img className='main-image--item main-image--shipi3' alt='shipi3' src={shipi3} />
-          <img className='main-image--item main-image--liquid_center' alt='liquid_center' src={liquid_center} />
+          <LazyLoad offset={100}>
+            <img className='main-image--item main-image--foil' alt='foil' src={foil} />
+          </LazyLoad>
+          <LazyLoad offset={100}>
+            <img className='main-image--item main-image--balk_left' alt='balk_left' src={balk_left} />
+          </LazyLoad>
+          <LazyLoad offset={100}>
+            <img className='main-image--item main-image--balk_right' alt='balk_right' src={balk_right} />
+          </LazyLoad>
+          <LazyLoad offset={100}>
+            <img className='main-image--item main-image--liquid_left' alt='liquid_left' src={liquid_left} />
+          </LazyLoad>
+          <LazyLoad offset={100}>
+            <img className='main-image--item main-image--liquid_right' alt='liquid_right' src={liquid_right} />
+          </LazyLoad>
+          <LazyLoad offset={100}>
+            <img className='main-image--item main-image--leaf' alt='leaf' src={leaf} />
+          </LazyLoad>
+          <LazyLoad offset={100}>
+            <img className='main-image--item main-image--splash_on_tree_left' alt='splash_on_tree_left' src={splash_on_tree_left} />
+          </LazyLoad>
+          <LazyLoad offset={100}>
+            <img className='main-image--item main-image--splash_on_tree_right' alt='splash_on_tree_right' src={splash_on_tree_right} />
+          </LazyLoad>
+          <LazyLoad offset={100}>
+            <img className='main-image--item main-image--sphere' alt='sphere' src={sphere} />
+          </LazyLoad>
+          <LazyLoad offset={100}>
+            <img className='main-image--item main-image--shipi1' alt='shipi1' src={shipi1} />
+          </LazyLoad>
+          <LazyLoad offset={100}>
+            <img className='main-image--item main-image--shipi2' alt='shipi2' src={shipi2}/>
+          </LazyLoad>
+          <LazyLoad offset={100}>
+            <img className='main-image--item main-image--shipi3' alt='shipi3' src={shipi3} />
+          </LazyLoad>
+          <LazyLoad offset={100}>
+            <img className='main-image--item main-image--liquid_center' alt='liquid_center' src={liquid_center} />
+          </LazyLoad>
         </div>
         <Suspense fallback={ <div>loading...</div> }>
-          <Accordion className='main-collapsible--wrap' closeable={true} classParentString='main-collapsible--item'>
-            <div className='main-collapsible--item' data-trigger='Fields'>
-              <div className='main-collapsible--item-desc'><p>— основной кураторский блок фестиваля.</p></div>
-              <div className='main-collapsible--item-text'>
-                <span className='main-collapsible--artist'>Senyawa (Индонезия) /</span> <span className='main-collapsible--artist'>SHXCXCHCXSH (Швеция) /</span> <span className='main-collapsible--artist'> Carla Dal Forno (Австралия) /</span> <span className='main-collapsible--artist'> Kemialliset Ystävät (Финляндия) /</span> <span className='main-collapsible--artist'> SSTROM (Швеция) /</span> <span className='main-collapsible--artist'> Vladimir Martynov & Moa Pillar /</span> <span className='main-collapsible--artist'> Ishome /</span> <span className='main-collapsible--artist'> Kedr Livanskiy /</span> <span className='main-collapsible--artist'> Kymatic /</span> <span className='main-collapsible--artist'>ПТУ /</span> <span className='main-collapsible--artist'> Kate NV /</span> <span className='main-collapsible--artist'> Misha Mishenko /</span> <span className='main-collapsible--artist'> Peter Theremin & Benjamin Skepper /</span> <span className='main-collapsible--artist'>Интурист /</span> <span className='main-collapsible--artist'> Bad Zu /</span> <span className='main-collapsible--artist'> Andrey Lee & Viktor Glazunov /</span> <span className='main-collapsible--artist'> X.Y.R. (Санкт-Петербург) /</span> <span className='main-collapsible--artist'> oqbqbo (Дания) /</span> <span className='main-collapsible--artist'> Abelle /</span> <span className='main-collapsible--artist'> Yung Acid /</span> <span className='main-collapsible--artist'> EYWA3 /</span> <span className='main-collapsible--artist'> Narcissi (Краснодар) /</span> <span className='main-collapsible--artist'> Foresteppe (Новосибирск) / </span> <span className='main-collapsible--artist'> Sestrica / </span> <span className='main-collapsible--artist'> Salama (Нижний Новгород) /</span> <span className='main-collapsible--artist'>Vtgnike /</span> <span className='main-collapsible--artist'> Marzahn /</span> <span className='main-collapsible--artist'> Solo Operator & Brinstaar / </span> <span className='main-collapsible--artist'> Holy Palms /</span> <span className='main-collapsible--artist'> Zurkas Tepla / </span> <span className='main-collapsible--artist'> Symphocat & Improv Choir (Ростов) / </span> <span className='main-collapsible--artist'> S.A.D. / </span> <span className='main-collapsible--artist'> LINJA band / </span> <span className='main-collapsible--artist'> REKK&KUTOBOI / </span> <span className='main-collapsible--artist'>Алексей Бобровский /</span> <span className='main-collapsible--artist'> Lipelis / </span> <span className='main-collapsible--artist'> Denis Smagin /</span> <span className='main-collapsible--artist'> Broken Composers /</span>
-              </div>
-            </div>
-            <div className='main-collapsible--item' data-trigger='Ored Recordings'>
-              <div className='main-collapsible--item-desc'><p>— этнографический проект-лейбл из Кабардино-Балкарии.</p></div>
-              <div className='main-collapsible--item-text'>
-                <span className='main-collapsible--artist'>Хава Хамзатова /</span> <span className='main-collapsible--artist'> Заур Нагоев /</span> <span className='main-collapsible--artist'> Jrpjej /</span>
-              </div>
-            </div>
-            <div className='main-collapsible--item' data-trigger='Рихтерфест'>
-              <div className='main-collapsible--item-desc'><p>— международный фестиваль экспериментальной и импровизационной музыки, запущенный в Москве в 2014 году.</p></div>
-              <div className='main-collapsible--item-text'>
-                <span className='main-collapsible--artist'>Carl Stone (США) /</span> <span className='main-collapsible--artist'> Yussef Abouzeid (Египет) /</span> <span className='main-collapsible--artist'> Алексей Борисов & Максим Елизаров & Дмитрий Лапшин /</span> <span className='main-collapsible--artist'> Sanscreed Kanon /</span> <span className='main-collapsible--artist'> Rites Of Passage /</span> <span className='main-collapsible--artist'> Speedball Trio /</span> <span className='main-collapsible--artist'> Drumutabor (Андрей Ким, Петр Отоцкий, Сергей Болотин, Оксана Григорьева) /</span> <span className='main-collapsible--artist'> Drojji /</span> <span className='main-collapsible--artist'> Петяев-Петяев Квартет /</span>
-              </div>
-            </div>
-            <div className='main-collapsible--item' data-trigger='Diagonal'>
-              <div className='main-collapsible--item-desc'><p>— независимый лондонский лейбл, основанный Оскаром Пауэллом (Powell), представляющий нетривиальную новаторскую электронику клубного формата.</p></div>
-              <div className='main-collapsible--item-text'>
-                <span className='main-collapsible--artist'>HP (Rassell Haswell & Powell) /</span> <span className='main-collapsible--artist'> NHK /</span> <span className='main-collapsible--artist'> Sote /</span>
-              </div>
-            </div>
-            <div className='main-collapsible--item' data-trigger='New New World Radio'>
-              <div className='main-collapsible--item-desc'><p>— свободное от цензуры интернет-радио с подстрочником «постжанры, постгеография, постполитика».</p></div>
-              <div className='main-collapsible--item-text'>
-                <span className='main-collapsible--artist'> The Wire Soundsystem: Chris Bohn, Shane Woolman, Emily Bick (Великобритания) /</span> <span className='main-collapsible--artist'> Graham Dunning (Великобритания) /</span> <span className='main-collapsible--artist'> Sonestrose /</span> <span className='main-collapsible--artist'> Виды Рыб / </span> <span className='main-collapsible--artist'> Arthur Kuzmin / </span> <span className='main-collapsible--artist'> Denis Smagin / </span>
-              </div>
-            </div>
+          <Accordion className='main-collapsible--wrap' closeable={true} classParentString='main-collapsible--item' preLineupText={this.props.data.preLineupText}>
+            { this.props.data.accordion.map((showcase,idx) => {
+                const {name, description, artists} = showcase
+                return (
+                  <div className='main-collapsible--item' data-trigger={name} key={idx}>
+                    <div className='main-collapsible--item-desc'><p>{description}</p></div>
+                    <div className='main-collapsible--item-text'>
+                      { artists.map((artist,artistId) => {
+                          return <span className='main-collapsible--artist' key={artistId}>{artist.name} /</span>
+                        })
+                      }
+                    </div>
+                  </div>
+                )
+              })
+            }
           </Accordion>
         </Suspense>
         <div className='partners-title--wrap' id='partners'></div>

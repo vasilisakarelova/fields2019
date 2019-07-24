@@ -88,7 +88,7 @@ export default class extends Component {
               <path d="M1 149.832L13 163V0.5H61" stroke="white"/>
             </svg>
           </div>
-          <div ref='desc' className='main-collapsible--desc-text'>Пятый фестиваль Fields собран из кураторских блоков и шоукейсов. Их формированием занимались музыкальные сообщества, звукозаписывающие лейблы и тематические музыкальные медиа</div>
+          <div ref='desc' className='main-collapsible--desc-text'>{this.props.preLineupText}</div>
         </div>
         <div className={`${this.props.className}-inner`}>{nodes}</div>
       </div>

@@ -190,7 +190,7 @@
       grid-template-columns: repeat(8, minmax(10%,1fr));
       grid-column-gap: 30px;
 
-      p {
+      .history-text--paragraphs {
         grid-column: 3/6;
       }
     }

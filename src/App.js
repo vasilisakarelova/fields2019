@@ -24,11 +24,11 @@ class App extends Component {
     this.openMobMenu = this.openMobMenu.bind(this)
   }
 
-  initRouting () {
+  initRouting (data) {
     page('/', (ctx, next) => {
       this.setState({
         route: ctx.path,
-        container: <Main />
+        container: <Main data={data.main} />
       })
 
       this.openMobMenu(false)
@@ -37,7 +37,7 @@ class App extends Component {
     page('/about', (ctx, next) => {
       this.setState({
         route: ctx.path,
-        container: <About />
+        container: <About data={data.about} />
       })
 
       this.openMobMenu(false)
@@ -67,7 +67,7 @@ class App extends Component {
     page('/history', (ctx, next) => {
       this.setState({
         route: ctx.path,
-        container: <History />
+        container: <History data={data.history} />
       })
 
       this.openMobMenu(false)
@@ -83,7 +83,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.initRouting()
+    this.initRouting(this.props.data)
   }
 
   render() {

@@ -1,16 +1,9 @@
 import React, { Component } from 'react'
+import LazyLoad from 'react-lazyload'
 import { Helmet } from 'react-helmet'
 import { YMaps, Map, Placemark } from 'react-yandex-maps'
 import Link from '../helpers/Link'
 import Slider from 'react-slick'
-
-import mutabor1 from '../assets/mutabor1.jpg'
-import mutabor2 from '../assets/mutabor2.jpg'
-import mutabor3 from '../assets/mutabor3.jpg'
-import mutabor4 from '../assets/mutabor4.jpg'
-import mutabor5 from '../assets/mutabor5.jpg'
-import mutabor6 from '../assets/mutabor6.jpg'
-import mutabor7 from '../assets/mutabor7.jpg'
 
 export default class extends Component {
   constructor (props) {
@@ -50,7 +43,8 @@ export default class extends Component {
       slidesToScroll: 1,
       autoplay: true,
       autoplaySpeed: 5000,
-      speed: 1000
+      speed: 1000,
+      adaptiveHeight: true
     }
 
     return (
@@ -67,32 +61,21 @@ export default class extends Component {
           </div>
           <div className='about-text--wrap'>
             <div className='about-text--self'>
-              <p>В программе: десяток с лишним зарубежных гостей, свыше 30 живых выступлений, долгожданные российские премьеры и внезапные коллаборации. Кураторское начало, как и прежде, превалирует над трендами: важная роль на фестивале Fields отводится неочевидным героям независимой сцены и серым кардиналам авангарда.</p>
-              <p>В этом году, помимо основной программы, фестиваль включает кураторские блоки и шоукейсы, равномерно распыленные по программной сетке. За их формирование отвечают музыкальные сообщества, звукозаписывающие лейблы и тематические музыкальные медиа: Diagonal Records, The Wire Soundsystem, Рихтерфест, Ored Recordings, New New World Radio.</p>
+              <p>{this.props.data.paragraph2}</p>
+              <p>{this.props.data.paragraph3}</p>
               <div className='about-text--slider-wrap'>
                 <div className='about-text--slider'>
                   <Slider {...settings}>
-                    <div className='about-text--slider-item'>
-                      <img alt='placeholder' src={mutabor1}/>
-                    </div>
-                    <div className='about-text--slider-item'>
-                      <img alt='placeholder' src={mutabor2}/>
-                    </div>
-                    <div className='about-text--slider-item'>
-                      <img alt='placeholder' src={mutabor3}/>
-                    </div>
-                    <div className='about-text--slider-item'>
-                      <img alt='placeholder' src={mutabor4}/>
-                    </div>
-                    <div className='about-text--slider-item'>
-                      <img alt='placeholder' src={mutabor5}/>
-                    </div>
-                    <div className='about-text--slider-item'>
-                      <img alt='placeholder' src={mutabor6}/>
-                    </div>
-                    <div className='about-text--slider-item'>
-                      <img alt='placeholder' src={mutabor7}/>
-                    </div>
+                    { this.props.data.slider.map((image,idx) => {
+                        return (
+                          <div className='about-text--slider-item' key={idx}>
+                            <LazyLoad offset={100}>
+                              <img alt={image.desc} src={image.url}/>
+                            </LazyLoad>
+                          </div>
+                        )
+                      })
+                    }
                   </Slider>
                 </div>
               </div>
@@ -109,9 +92,7 @@ export default class extends Component {
               </div>
             </Link>
           </div>
-          <div className='about-extra-text--wrap'>
-            <p>Пятый выпуск фестиваля изобретательной музыки Fields пройдет в новом пространстве команд Arma и «Рабица» — Mutabor. Его программа охватит временной интервал в два дня и одну ночь, а само действо развернется на трех параллельных сценах.</p>
-          </div>
+          <div className='about-extra-text--wrap' dangerouslySetInnerHTML={{ __html: this.props.data.paragraph1 }}></div>
           <div className='about-map--wrap'>
             <YMaps>
               <Map
