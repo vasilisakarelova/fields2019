@@ -7,23 +7,22 @@ import resized from './utils/resized'
 import App from './App'
 import { unregister } from './serviceWorker'
 
-import api from './testdb'
-
 const origin = window.location.origin
 
-// window.fetch(`${origin}/admin/api`)
-//   .then((response) => {
-//     if (response.status >= 400) {
-//       throw new Error("Bad response from server")
-//     }
-//     return response.json()
-//   })
-//   .then((data) => {
-//     ReactDOM.render(<App data={data} />, document.getElementById('root'))
-//     unregister()
-//     resized()
-//   })
+fetch(`${origin}/admin/api`)
+  .then((response) => {
+    if (response.status >= 400) {
+      throw new Error("Bad response from server")
+    }
+    return response.text()
+  })
+  .then((data) => {
+    const dataJson = JSON.parse(data)
 
-ReactDOM.render(<App data={api} />, document.getElementById('root'))
-unregister()
-resized()
+    ReactDOM.render(<App data={dataJson} />, document.getElementById('root'))
+    unregister()
+    resized()
+  })
+  .catch(error => {
+    console.log(error)
+  })
