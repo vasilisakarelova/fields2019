@@ -8,6 +8,8 @@ import Carousel, { Modal, ModalGateway } from 'react-images'
 import splash01 from '../assets/history01.png'
 import splash02 from '../assets/history02.png'
 
+import og from '../assets/og.png'
+
 export default class extends Component {
   constructor (props) {
     super(props)
@@ -58,8 +60,12 @@ export default class extends Component {
         <Helmet>
           <meta charSet="utf-8" />
           <title>Fields | History</title>
-            <meta name="author" content="Fields & Mutabor" />
-            <meta name="copyright" content="Fields & Mutabor" />
+          <meta name="author" content="Fields & Mutabor" />
+          <meta name="copyright" content="Fields & Mutabor" />
+          <meta property="og:image:width" content="1842" />
+          <meta property="og:image:height" content="976" />
+          <meta property="og:image" content={og} />
+          <meta property="og:title" content="History" />
         </Helmet>
         <div className='history-inner'>
           <div className='history-title--wrap'>История</div>

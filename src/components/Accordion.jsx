@@ -81,8 +81,8 @@ export default class extends Component {
       <div className={this.props.className} ref='accordion' id='lineup'>
         <div className='main-collapsible--desc-wrap' ref='descWrap'>
           <div className='main-collapsible--desc-arrow'>
-            <svg className='main-collapsible--desc-arrow-svg' ref='arrow' width="100%" height="100%" viewBox="0 0 472 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M472 0.499999L14 0.499999L14 42.5L1 29.5" stroke="white"/>
+            <svg className='main-collapsible--desc-arrow-svg' ref='arrow' width="100%" viewBox="0 0 469 105" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M469 0.999999L11.0001 0.999999L11 103.5L0.500003 93" stroke="white"/>
             </svg>
             <svg className='main-collapsible--desc-arrow-svg-mob' ref='arrowMob' width="100%" height="100%" viewBox="0 0 61 165" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M1 149.832L13 163V0.5H61" stroke="white"/>

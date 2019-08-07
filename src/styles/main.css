@@ -2,13 +2,100 @@
   position: relative;
   display: grid;
   padding: 0 20px;
-  grid-template-columns: repeat(2, minmax(auto, 1fr));
+  grid-template-columns: repeat(2,minmax(45%,1fr));
   grid-column-gap: 20px;
+  width: 100%;
 
   @media (min-width: 984px) {
     padding: 0 60px;
     grid-template-columns: repeat(8, minmax(auto, 1fr));
     grid-column-gap: 30px;
+  }
+}
+
+.main-shema {
+  &--wrap {
+    position: relative;
+    display: grid;
+    padding: 0;
+    grid-template-columns: repeat(2,minmax(auto,1fr));
+    grid-column-gap: 20px;
+    grid-column: span 2;
+    padding-top: 70px;
+
+    @media (min-width: 984px) {
+      grid-template-columns: repeat(8, minmax(auto, 1fr));
+      grid-column-gap: 30px;
+      grid-column: span 8;
+      padding-top: 110px;
+    }
+  }
+
+  &--text {
+    position: relative;
+    font-family: Editorial Grotesk ;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+    grid-column: span 2;
+    padding-left: 95px;
+
+    p {
+      margin: 0;
+    }
+
+    @media (min-width: 984px) {
+      grid-column: 2/6;
+      font-size: 23px;
+      line-height: 33px;
+      padding-left: 0px;
+    }
+  }
+
+  &--map {
+    grid-column: span 2;
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 50px;
+
+    @media (min-width: 984px) {
+      grid-row: 2;
+      grid-column: 2/9;
+      padding-top: 0px;
+    }
+  }
+
+  &--title {
+    position: relative;
+    font-family: Editorial Grotesk ;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 36px;
+    text-transform: uppercase;
+    font-feature-settings: 'tnum' on, 'onum' on;
+    color: #FFFFFF;
+    grid-column: span 2;
+    padding-left: 95px;
+    padding-bottom: 40px;
+
+    @media (min-width: 984px) {
+      display: block;
+      grid-column: 1;
+      position: absolute;
+      transform: translate(-50%,0) rotate(-90deg);
+      transform-origin: top center;
+      top: calc(190px + 110px);
+      height: 48px;
+      width: 380px;
+      font-size: 52px;
+      line-height: 48px;
+      text-align: right;
+      padding-left: 0px;
+      padding-bottom: 0px;
+    }
   }
 }
 
@@ -19,25 +106,19 @@
   height: calc(100vh - 162px);
   left: -20px;
 
-  &--background {
-    position: absolute;
-    display: block;
-    width: 100%;
-    top: -162px;
-    height: 100vh;
-    /* background-image: url('./assets/background-mob.jpg');
-    background-size: cover;
-    background-position: center center; */
-  }
-
   &--item {
     position: absolute;
     display: block;
-    width: auto;
-    top: -162px;
-    height: 100vh;
+    top: 50%;
+    width: 100%;
+    height: auto;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%,-50%);
+
+    @media (min-width: 512px) {
+      height: 100%;
+      width: auto;
+    }
   }
 
   @media (min-width: 984px) {
@@ -59,9 +140,6 @@
     padding-top: 100vh;
     grid-column: span 8;
     left: -60px;
-    /* background-image: url('./assets/background.png');
-    background-size: cover;
-    background-position: center center; */
   }
 
   &--item {
@@ -70,13 +148,12 @@
     width: 170%;
     top: 0;
     left: 5%;
-    /* opacity: 0;
-    transition: opacity .4s linear; */
 
     @media (min-width: 984px) {
       width: 100%;
       left: 50%;
-      transform: translateX(-50%);
+      top: 60%;
+      transform: translate(-50%,-50%);
     }
   }
 }
@@ -130,6 +207,7 @@
       position: relative;
       display: none;
       width: 100%;
+      height: auto;
 
       @media (min-width: 984px) {
         display: block;
@@ -146,8 +224,8 @@
       }
 
       path {
-        stroke-dasharray: 518;
-        stroke-dashoffset: 518;
+        stroke-dasharray: 575;
+        stroke-dashoffset: 575;
       }
     }
 
@@ -256,10 +334,8 @@
     font-weight: normal;
     font-size: 23px;
     line-height: 36px;
-    text-transform: uppercase;
     font-feature-settings: 'tnum' on, 'onum' on;
     color: #fff;
-    transition: color .1s linear;
 
     @media (min-width: 984px) {
       font-size: 36px;
@@ -267,6 +343,14 @@
       padding-right: 7px;
       padding-top: 7px;
     }
+  }
+
+  &--artist-link {
+    position: relative;
+    display: unset;
+    text-decoration: none;
+    color: #fff;
+    transition: color .1s linear;
 
     &:hover {
       color: #000;
@@ -276,7 +360,7 @@
 
 @keyframes draw {
   from {
-    stroke-dashoffset: 518;
+    stroke-dashoffset: 575;
   }
   to {
     stroke-dashoffset: 0;
@@ -288,6 +372,6 @@
     stroke-dashoffset: 0;
   }
   to {
-    stroke-dashoffset: 518;
+    stroke-dashoffset: 575;
   }
 }

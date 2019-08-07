@@ -5,6 +5,8 @@ import { YMaps, Map, Placemark } from 'react-yandex-maps'
 import Link from '../helpers/Link'
 import Slider from 'react-slick'
 
+import og from '../assets/og.png'
+
 export default class extends Component {
   constructor (props) {
     super(props)
@@ -52,8 +54,12 @@ export default class extends Component {
         <Helmet>
           <meta charSet="utf-8" />
           <title>Fields | About</title>
-            <meta name="author" content="Fields & Mutabor" />
-            <meta name="copyright" content="Fields & Mutabor" />
+          <meta name="author" content="Fields & Mutabor" />
+          <meta name="copyright" content="Fields & Mutabor" />
+          <meta property="og:image:width" content="1842" />
+          <meta property="og:image:height" content="976" />
+          <meta property="og:image" content={og} />
+          <meta property="og:title" content="About" />
         </Helmet>
         <div className='about-inner'>
           <div className='about-title--wrap'>

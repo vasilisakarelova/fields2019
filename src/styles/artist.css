@@ -1,0 +1,300 @@
+.artist-wrap {
+  position: relative;
+  display: grid;
+  padding: 0 20px;
+  grid-template-columns: repeat(2,minmax(auto,1fr));
+  grid-column-gap: 20px;
+
+  @media (min-width: 984px) {
+    padding: 0 60px;
+    grid-template-columns: repeat(8, minmax(auto, 1fr));
+    grid-column-gap: 30px;
+  }
+}
+
+.education-register--link {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+
+  &:hover {
+    .underline {
+      width: 100%;
+    }
+  }
+}
+
+.underline {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  height: 1px;
+  width: 0;
+  left: 50%;
+  right: 50%;
+  background-color: #fff;
+  -webkit-transform: translateX(-50%) translateZ(0);
+  transform: translateX(-50%) translateZ(0);
+  transition: width 260ms cubic-bezier(.175,.885,.32,1.275);
+}
+
+.artist-inner {
+  position: relative;
+  display: block;
+  grid-column: span 2;
+  padding-top: 35px;
+
+  @media (min-width: 984px) {
+    grid-column: span 8;
+    padding-top: calc(117px + 70px);
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(8, minmax(10%,1fr));
+    grid-column-gap: 30px;
+  }
+
+  &.at-education {
+    .about-link--prev {
+      grid-row: auto;
+    }
+
+    .artist-body {
+      padding-bottom: 150px;
+    }
+
+    .artist-header--name {
+      @media (min-width: 984px) {
+        font-size: 32px;
+        line-height: 32px;
+      }
+    }
+
+    .history-title--wrap {
+      font-size: 30px;
+      line-height: 36px;
+      margin-bottom: 30px;
+
+      @media (min-width: 984px) {
+        font-size: 52px;
+        line-height: 48px;
+      }
+    }
+
+    .history-text--paragraphs {
+      font-family: Editorial Grotesk;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 20px;
+      color: #000;
+      margin: 0;
+      padding-bottom: 30px;
+
+      p {
+        margin: 0;
+      }
+
+      @media (min-width: 984px) {
+        font-size: 23px;
+        line-height: 33px;
+        grid-column: 2/9;
+        padding-bottom: 75px;
+      }
+    }
+  }
+}
+
+.artist-header {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2,minmax(45%,1fr));
+  grid-column-gap: 20px;
+  grid-column: 1/3;
+
+  @media (min-width: 984px) {
+    grid-column: span 8;
+    grid-template-columns: repeat(8, minmax(10%,1fr));
+    grid-column-gap: 30px;
+    display: grid;
+  }
+
+  &--name {
+    font-family: Editorial Grotesk ;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 23px;
+    line-height: 36px;
+    text-transform: uppercase;
+    color: #000000;
+
+    @media (min-width: 984px) {
+      font-size: 64px;
+      line-height: 64px;
+      grid-column: 2/7;
+    }
+  }
+
+  &--country {
+    font-family: Editorial Grotesk ;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 23px;
+    line-height: 36px;
+    text-align: right;
+    letter-spacing: -0.05em;
+    color: #FFFFFF;
+    mix-blend-mode: normal;
+
+    @media (min-width: 984px) {
+      font-size: 48px;
+      line-height: 48px;
+      grid-column: 7;
+    }
+  }
+
+  &--divider {
+    position: relative;
+    display: block;
+    height: 1px;
+    width: 100%;
+    background: #fff;
+    grid-column: span 2;
+    margin: 10px 0;
+
+    @media (min-width: 984px) {
+      grid-column: 2/9;
+      margin: 20px 0;
+    }
+  }
+
+  &--date {
+    @media (min-width: 984px) {
+      grid-column: 2/4;
+    }
+  }
+
+  &--time {
+    @media (min-width: 984px) {
+      grid-column: 4/6;
+    }
+  }
+
+  &--place {
+    padding-top: 10px;
+
+    @media (min-width: 984px) {
+      grid-column: 6/8;
+      padding-top: 0px;
+    }
+  }
+
+  &--info {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+  }
+
+  &--info-title {
+    font-family: Editorial Grotesk ;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 12px;
+    text-align: right;
+    color: #FFFFFF;
+    mix-blend-mode: normal;
+
+    @media (min-width: 984px) {
+      font-size: 12px;
+      line-height: 12px;
+    }
+  }
+
+  &--info-divider {
+    position: relative;
+    display: block;
+    padding: 0 9px;
+  }
+
+  &--info-self {
+    font-family: Editorial Grotesk ;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 20px;
+    letter-spacing: -0.05em;
+    color: #FFFFFF;
+    mix-blend-mode: normal;
+
+    @media (min-width: 984px) {
+      font-size: 20px;
+      line-height: 20px;
+    }
+  }
+}
+
+.artist-body {
+  position: relative;
+  grid-column: 1/3;
+  padding-top: 35px;
+  padding-bottom: 100px;
+
+  @media (min-width: 984px) {
+    grid-column: span 8;
+    display: grid;
+    grid-template-columns: repeat(8, minmax(10%,1fr));
+    grid-column-gap: 30px;
+    padding-top: 65px;
+    padding-bottom: 300px;
+  }
+
+  &--img {
+    position: relative;
+    display: block;
+
+    img {
+      position: relative;
+      display: block;
+      width: 100%;
+    }
+
+    @media (min-width: 984px) {
+      grid-column: 1/4;
+      width: calc(100% + 30px + 60px);
+      left: -60px;
+    }
+  }
+
+  &--desc {
+    position: relative;
+    display: block;
+    padding-top: 35px;
+
+    @media (min-width: 984px) {
+      grid-column: 5/8;
+      width: calc(100% + 30px);
+      left: -30px;
+      padding-top: 0px;
+    }
+
+    p {
+      font-family: Editorial Grotesk ;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 20px;
+      color: #000000;
+      margin: 0;
+      padding-bottom: 20px;
+
+      &:last-of-type {
+        padding-bottom: 0;
+      }
+
+      @media (min-width: 984px) {
+        font-size: 23px;
+        line-height: 33px;
+      }
+    }
+  }
+}

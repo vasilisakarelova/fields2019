@@ -6,10 +6,16 @@ import * as css from 'classnames'
 import Header from './components/Header.jsx'
 import HeaderMob from './components/HeaderMob.jsx'
 import Footer from './components/Footer.jsx'
+
+import og from './assets/og.png'
+
 const Main = lazy(() => import('./components/Main.jsx'))
 const About = lazy(() => import('./components/About.jsx'))
 const Tickets = lazy(() => import('./components/Tickets.jsx'))
 const History = lazy(() => import('./components/History.jsx'))
+const Artist = lazy(() => import('./components/Artist.jsx'))
+const Timeline = lazy(() => import('./components/Timeline.jsx'))
+const Education = lazy(() => import('./components/Education.jsx'))
 
 class App extends Component {
   state = {
@@ -28,7 +34,7 @@ class App extends Component {
     page('/', (ctx, next) => {
       this.setState({
         route: ctx.path,
-        container: <Main data={data.main} />
+        container: <Main data={data.main} about={data.about} />
       })
 
       this.openMobMenu(false)
@@ -73,6 +79,35 @@ class App extends Component {
       this.openMobMenu(false)
     })
 
+    page('/timeline', (ctx, next) => {
+      this.setState({
+        route: ctx.path,
+        container: <Timeline data={data.artists} showcases={data.main.accordion} />
+      })
+
+      this.openMobMenu(false)
+    })
+
+    page('/education', (ctx, next) => {
+      this.setState({
+        route: ctx.path,
+        container: <Education />
+      })
+
+      this.openMobMenu(false)
+    })
+
+    data.artists.map((artist, idx) => {
+      page(`/${artist.url}`, (ctx, next) => {
+        this.setState({
+          route: ctx.path,
+          container: <Artist data={artist} />
+        })
+
+        this.openMobMenu(false)
+      })
+    })
+
     page()
   }
 
@@ -92,9 +127,12 @@ class App extends Component {
         <Helmet>
           <meta charSet="utf-8" />
           <title>Fields</title>
-          <meta name="author" content="Outer Practice" />
-          <meta name="description" content="Revolving around website and print matters." />
-          <meta name="copyright" content="Outer Practice" />
+          <meta name="author" content="Fields & Mutabor" />
+          <meta name="copyright" content="Fields & Mutabor" />
+          <meta property="og:image:width" content="1842" />
+          <meta property="og:image:height" content="976" />
+          <meta property="og:image" content={og} />
+          <meta property="og:title" content="Fields" />
         </Helmet>
         <Header openMobMenu={this.state.openMobMenu} />
         <HeaderMob openMobMenu={this.openMobMenu} isOpen={this.state.openMobMenu} />

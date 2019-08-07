@@ -1,11 +1,21 @@
+.footer-mob {
+  position: relative;
+  display: block;
+
+  @media (min-width: 984px) {
+    display: none;
+  }
+}
+
 .footer-wrap {
   position: relative;
-  display: grid;
   padding: 0 20px 18px;
   grid-template-columns: repeat(2, minmax(auto, 1fr));
   grid-column-gap: 20px;
+  display: none;
 
   @media (min-width: 984px) {
+    display: grid;
     height: 200px;
     padding: 48px 60px 38px;
     grid-template-columns: repeat(8, minmax(auto, 1fr));
@@ -68,21 +78,29 @@
     position: relative;
     display: flex;
     flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
 
     @media (min-width: 984px) {
       width: 100%;
       border-bottom: 1px solid #fff;
       margin-bottom: 11px;
       padding-bottom: 34px;
+      justify-content: flex-start;
     }
   }
 
   &--socials-item {
     position: relative;
     display: block;
-    margin-right: 45px;
-    width: 48px;
-    height: 48px;
+    width: 30px;
+    height: 30px;
+
+    @media (min-width: 984px) {
+      margin-right: 45px;
+      width: 48px;
+      height: 48px;
+    }
 
     svg {
       position: relative;
