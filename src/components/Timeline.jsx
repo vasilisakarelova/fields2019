@@ -61,7 +61,7 @@ export default class extends Component {
 
   componentDidMount () {
     const days = document.querySelectorAll('.timeline-table--day-wrap')
-    days.forEach(day => {
+    days.forEach((day,dayIdx) => {
       const artists = [].slice.call(day.querySelectorAll('.timeline-table--artist'))
       artists.forEach(artist => {
         const artistColumn = artist.style.gridColumnStart
@@ -93,6 +93,15 @@ export default class extends Component {
           }
         })
       })
+
+      if (dayIdx === 1) {
+        const div = document.createElement('div')
+        div.className = 'timeline-table--artist'
+        div.style.gridColumn = 5
+        div.style.gridRow = '1/3'
+        div.style.borderTop = 'none'
+        day.appendChild(div)
+      }
     })
 
     const artistsMob = document.querySelectorAll('.timeline-table--dates-artist')
@@ -132,6 +141,7 @@ export default class extends Component {
       })
       const hours = [...new Set(result.map(item => Object.assign({}, {[moment(item.dateOfConcert, this.getFormat(item.dateOfConcert)).format('DD')]: item.timeOfConcert}) ))]
       hours.sort((a,b) => Object.keys(a) - Object.keys(b))
+      if (stage === '') return
       artistsOnStage.push(Object.assign({}, {'stage': stage, 'hours': hours.sort(), 'artists': result}))
     })
 
@@ -211,7 +221,7 @@ export default class extends Component {
             <div className='timeline-table--header'>
               <div className='timeline-table--header-cell'>Время</div>
               <div className='timeline-table--header-cell'>Summer Stage by Jagervibes</div>
-              <div className='timeline-table--header-cell'>Main</div>
+              <div className='timeline-table--header-cell'>Hall</div>
               <div className='timeline-table--header-cell'>Medium</div>
               <div className='timeline-table--header-cell'>Garden</div>
             </div>
@@ -237,7 +247,7 @@ export default class extends Component {
                     { artists.map((artist, artistIdx) => {
                         const stage = artist.placeOfConcert
                         const time = artist.timeOfConcert
-                        const row = hours.indexOf(time) + 1
+                        let row = hours.indexOf(time) + 1
 
                         let column = 2
 
@@ -245,7 +255,7 @@ export default class extends Component {
                           case (stage.localeCompare('SUMMER STAGE BY JAGERVIBES', undefined, { sensitivity: 'base' }) === 0):
                             column = 2
                             break;
-                          case (stage.localeCompare('main', undefined, { sensitivity: 'base' }) === 0):
+                          case (stage.localeCompare('hall', undefined, { sensitivity: 'base' }) === 0):
                             column = 3
                             break;
                           case (stage.localeCompare('medium', undefined, { sensitivity: 'base' }) === 0):
@@ -260,16 +270,47 @@ export default class extends Component {
                         }
 
                         if (column === 1) return null
-                        const bottom = (row === hours.length) ? 'none' : '1px solid #fff'
+                        let bottom = (row === hours.length) ? 'none' : '1px solid #fff'
 
-                        const style = {
+                        if (artist.timeEndOfConcert !== '') {
+                          if (row + 1 <= hours.length) {
+                            if (artist.url === 'the-wire-soundsystem') {
+                              row = `${row}/${row + 4}`
+                              bottom = '1px solid #b0b6bb'
+                            } else {
+                              row = `${row}/${row + 2}`
+                            }
+                          } else {
+                            bottom = '1px solid #b0b6bb'
+                          }
+                        }
+
+                        if (artist.url === 'the-wire-soundsystem') {}
+
+                        let style = {
                           gridColumn: `${column}`,
                           gridRow: `${row}`,
                           borderBottom: `${bottom}`
                         }
+                        let hrefStyle = {}
+
+                        if (artist.timeEndOfConcert !== '') {
+                          if (typeof row !== 'number') {
+                            style = Object.assign(style, {
+                              paddingTop: '28px',
+                              alignItems: 'flex-start'
+                            })
+
+                            hrefStyle = Object.assign(hrefStyle, {
+                              display: 'block',
+                              minHeight: '32px',
+                              height: 'auto'
+                            })
+                          }
+                        }
 
                         return (
-                          <div className='timeline-table--artist' key={artistIdx} data-url={artist.url} style={style}><a target='_blank' rel="noopener noreferrer" href={`${origin}/${artist.url}`}>{artist.name}</a></div>
+                          <div className='timeline-table--artist' key={artistIdx} data-url={artist.url} style={style}><a target='_blank' style={hrefStyle} rel="noopener noreferrer" href={`${origin}/${artist.url}`}>{artist.name}</a></div>
                         )
                       })
                     }
