@@ -24,7 +24,8 @@
     padding-top: calc(117px + 70px);
     display: grid;
     width: 100%;
-    grid-template-columns: repeat(8, minmax(10%,1fr));
+    grid-template-columns: repeat(8,minmax(auto,1fr));
+    justify-content: space-between;
     grid-column-gap: 30px;
   }
 }
@@ -515,6 +516,7 @@
     height: 460px;
     filter: grayscale(100%);
     padding-bottom: 53px;
+    overflow: hidden;
 
     @media (min-width: 984px) {
       grid-column: 2/9;

@@ -133,7 +133,7 @@
   &--self {
     position: relative;
     display: block;
-    margin-left: 83px;
+    margin-left: 35vw;
     font-family: Editorial Grotesk ;
     font-style: normal;
     font-weight: normal;
@@ -198,8 +198,10 @@
 
   &--year {
     position: absolute;
-    top: 0;
-    left: -83px;
+    padding-right: 10px;
+    top: 2px;
+    width: calc(35vw - 10px);
+    left: -35vw;
     font-family: Editorial Grotesk;
     font-style: normal;
     font-weight: normal;
@@ -216,6 +218,9 @@
       grid-column: 2;
       font-size: 64px;
       line-height: 59px;
+      top: auto;
+      width: 100%;
+      padding-left: 0;
     }
 
     span.date {
@@ -284,9 +289,14 @@
   &--01 {
     position: absolute;
     display: block;
-    width: calc((100% - 90px)/8*2);
-    left: -60px;
+    width: 35vw;
+    left: calc(-35vw - 20px);
     bottom: 17%;
+
+    @media (min-width: 984px) {
+      width: calc((100% - 90px)/8*2);
+      left: -60px;
+    }
 
     img {
       position: relative;
@@ -297,10 +307,14 @@
 
   &--02 {
     position: absolute;
-    display: block;
+    display: none;
     width: calc((100% - 60px)/8*2.5);
     right: 0;
     bottom: calc(53px + 4%);
+
+    @media (min-width: 984px) {
+      display: block;
+    }
 
     img {
       position: relative;

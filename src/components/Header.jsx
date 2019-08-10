@@ -55,14 +55,6 @@ export default class extends Component {
                 <div className='header-nav--item-submenu-item'>
                   <Link className='header-nav--item-submenu-link' to='/history'>История</Link>
                 </div>
-                <div className='header-nav--item-submenu-item'>
-                  <svg width="2" height="15" viewBox="0 0 2 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 0L1 15" stroke="#B0B6BB"/>
-                  </svg>
-                </div>
-                <div className='header-nav--item-submenu-item'>
-                  <Link className='header-nav--item-submenu-link' to='/timeline'>Расписание</Link>
-                </div>
               </div>
             </div>
             <div className='header-nav--item is-mob'>
@@ -81,9 +73,10 @@ export default class extends Component {
                 <div className='header-nav--item-title'>Образовательная программа</div>
               </Link>
             </div>
-            <div className='header-nav--item is-mob'>
+            <div className='header-nav--item'>
               <Link className='header-nav--link' to='/timeline'>
                 <div className='header-nav--item-title'>Расписание</div>
+                <div className='header-nav--item-sub-title'>Timeline</div>
               </Link>
             </div>
             <div className='header-nav--item'>

@@ -119,6 +119,7 @@
     grid-column: 5 / 9;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
   }
 
@@ -140,7 +141,8 @@
 
     @media (min-width: 984px) {
       padding-bottom: 0px;
-      padding-right: 20px;
+      padding-right: 0px;
+      width: auto;
 
       &:last-of-type {
         padding-right: 0px;

@@ -277,6 +277,9 @@ export default class extends Component {
                             if (artist.url === 'the-wire-soundsystem') {
                               row = `${row}/${row + 4}`
                               bottom = '1px solid #b0b6bb'
+                            } else if (artist.url === 'broken-composers') {
+                              console.log(row)
+                              row = `${row}/${row + 3}`
                             } else {
                               row = `${row}/${row + 2}`
                             }
@@ -284,8 +287,6 @@ export default class extends Component {
                             bottom = '1px solid #b0b6bb'
                           }
                         }
-
-                        if (artist.url === 'the-wire-soundsystem') {}
 
                         let style = {
                           gridColumn: `${column}`,
