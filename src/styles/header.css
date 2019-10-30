@@ -12,6 +12,31 @@
     transform: translateX(0);
   }
 
+  &-simple {
+    position: relative;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+    height: auto;
+    background: transparent;
+    padding: 0 20px;
+
+    .header-inner {
+      border-bottom: none;
+
+      @media (max-width: 983px) {
+        position: relative;
+        display: block;
+        padding: 50px 0 0;
+      }
+    }
+
+    @media (min-width: 984px) {
+      position: fixed;
+      padding: 0 60px;
+    }
+  }
+
   @media (min-width: 984px) {
     background: #b0b6bb;
     height: auto;
@@ -50,6 +75,21 @@
     align-items: center;
     padding-left: 35px;
     grid-column: span 4;
+  }
+
+  &-simple {
+    position: relative;
+    display: block;
+
+    @media (min-width: 984px) {
+      display: flex;
+      align-items: flex-start;
+      grid-column: span 4;
+    }
+
+    svg {
+      width: auto;
+    }
   }
 
   &--link {

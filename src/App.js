@@ -4,6 +4,7 @@ import page from 'page'
 import * as css from 'classnames'
 
 import Header from './components/Header.jsx'
+import SimpleHeader from './components/SimpleHeader.jsx'
 import HeaderMob from './components/HeaderMob.jsx'
 import Footer from './components/Footer.jsx'
 
@@ -16,6 +17,7 @@ const History = lazy(() => import('./components/History.jsx'))
 const Artist = lazy(() => import('./components/Artist.jsx'))
 const Timeline = lazy(() => import('./components/Timeline.jsx'))
 const Education = lazy(() => import('./components/Education.jsx'))
+const Ishome = lazy(() => import('./components/Ishome.jsx'))
 
 class App extends Component {
   state = {
@@ -44,6 +46,15 @@ class App extends Component {
       this.setState({
         route: ctx.path,
         container: <About data={data.about} />
+      })
+
+      this.openMobMenu(false)
+    })
+
+    page('/ishome', (ctx, next) => {
+      this.setState({
+        route: ctx.path,
+        container: <Ishome data={data.about} />
       })
 
       this.openMobMenu(false)
@@ -134,12 +145,13 @@ class App extends Component {
           <meta property="og:image" content={og} />
           <meta property="og:title" content="Fields" />
         </Helmet>
-        <Header openMobMenu={this.state.openMobMenu} />
-        <HeaderMob openMobMenu={this.openMobMenu} isOpen={this.state.openMobMenu} />
+        { this.state.route !== '/ishome' && <Header openMobMenu={this.state.openMobMenu} /> }
+        { this.state.route === '/ishome' && <SimpleHeader openMobMenu={this.state.openMobMenu} /> }
+        { this.state.route !== '/ishome' && <HeaderMob openMobMenu={this.openMobMenu} isOpen={this.state.openMobMenu} /> }
         <Suspense fallback={ <div>loading...</div> }>
           { this.state.container }
         </Suspense>
-        <Footer page={this.state.route} />
+        { this.state.route !== '/ishome' && <Footer page={this.state.route} /> }
       </div>
     );
   }
