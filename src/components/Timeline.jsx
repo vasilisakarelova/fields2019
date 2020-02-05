@@ -157,7 +157,7 @@ export default class extends Component {
           <meta property="og:image" content={og} />
           <meta property="og:title" content="Timeline" />
         </Helmet>
-        <div className='timeline-inner'>
+        {/*<div className='timeline-inner'>
           <div className='timeline-header'>
             <div className='timeline-header--title'>timeline</div>
             <div className='timeline-header--showcases'>
@@ -320,7 +320,7 @@ export default class extends Component {
               })
             }
           </div>
-        </div>
+        </div>*/}
       </div>
     )
   }

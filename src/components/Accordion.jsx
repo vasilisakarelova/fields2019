@@ -62,19 +62,8 @@ export default class extends Component {
     const nodes = this.props.children.map((node, index) => {
       const triggerWhenOpen = (node.props['data-trigger-when-open']) ? node.props['data-trigger-when-open'] : node.props['data-trigger']
       const triggerDisabled = (node.props['data-trigger-disabled']) || false
-
-      return (<Collapsible
-                key={"Collapsible"+index}
-                handleTriggerClick={position => this.handleTriggerClick(position)}
-                open={(!this.state.closeAll && this.state.openPosition === index)}
-                trigger={node.props['data-trigger']}
-                triggerWhenOpen={triggerWhenOpen}
-                triggerDisabled={triggerDisabled}
-                transitionTime={this.props.transitionTime}
-                easing={this.props.easing}
-                openedClassName={'is-opened'}
-                classParentString={this.props.classParentString}
-                accordionPosition={index}>{node}</Collapsible>);
+      
+      return (<div>{node}</div>);
     });
 
     return (

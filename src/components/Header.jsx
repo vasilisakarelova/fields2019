@@ -34,28 +34,15 @@ export default class extends Component {
                   <path d="M1 55L28 1" stroke="white"/>
                 </svg>
               </div>
-              <div className='header-logo--date'>MUTABOR<br/>10 — 11 августа 2019</div>
+              <div className='header-logo--date'>MUTABOR<br/>15 — 16 февраля 2020</div>
             </div>
           </div>
           <div className='header-nav'>
-            <div className='header-nav--item has-submenu'>
-              <div className='header-nav--link'>
+            <div className='header-nav--item'>
+              <Link className='header-nav--link' to='/history'>
                 <div className='header-nav--item-title'>О фестивале</div>
                 <div className='header-nav--item-sub-title'>About the festival</div>
-              </div>
-              <div className='header-nav--item-submenu'>
-                <div className='header-nav--item-submenu-item'>
-                  <Link className='header-nav--item-submenu-link' to='/education'>Образовательная программа</Link>
-                </div>
-                <div className='header-nav--item-submenu-item'>
-                  <svg width="2" height="15" viewBox="0 0 2 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 0L1 15" stroke="#B0B6BB"/>
-                  </svg>
-                </div>
-                <div className='header-nav--item-submenu-item'>
-                  <Link className='header-nav--item-submenu-link' to='/history'>История</Link>
-                </div>
-              </div>
+              </Link>
             </div>
             <div className='header-nav--item is-mob'>
               <Link className='header-nav--link' to='/history'>
@@ -86,7 +73,7 @@ export default class extends Component {
               </Link>
             </div>
             <div className='header-nav--item'>
-              <a className='header-nav--link' target='_blank' rel="noopener noreferrer" href='https://fieldsmutabor.ticketscloud.org/?fbclid=IwAR1VLgceG7Y5L0KLCb5XSLlfwnthmXbru5Ndctmrn-1GM4ux0uttlyY2BP4'>
+              <a className='header-nav--link' target='_blank' rel="noopener noreferrer" href='https://fields55.ticketscloud.org/'>
                 <div className='header-nav--item-title'>Билеты</div>
                 <div className='header-nav--item-sub-title'>Tickets</div>
               </a>

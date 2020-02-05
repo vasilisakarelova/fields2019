@@ -34,7 +34,7 @@ html, body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: #b0b6bb;
+  background: #fd060c;
   /* background: linear-gradient(75deg, #808f95, #c5ced4); */
 
   &.at-home {

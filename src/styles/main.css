@@ -1,7 +1,7 @@
 .main-wrap {
   position: relative;
   display: grid;
-  padding: 0 20px;
+  padding: 20px 20px 0px;
   grid-template-columns: repeat(2,minmax(45%,1fr));
   grid-column-gap: 20px;
   width: 100%;
@@ -10,6 +10,7 @@
     padding: 0 60px;
     grid-template-columns: repeat(8, minmax(auto, 1fr));
     grid-column-gap: 30px;
+    top: 115px;
   }
 }
 
@@ -128,32 +129,31 @@
 
 .main-image {
   position: relative;
-  display: none;
+  display: block;
   grid-column: span 2;
   width: 100vw;
-  padding-top: calc(100vh - 207px);
+  padding-top: 57.5%;
   left: -20px;
   overflow: hidden;
 
   @media (min-width: 984px) {
-    display: block;
-    padding-top: 100vh;
+    padding-top: 55%;
     grid-column: span 8;
     left: -60px;
+    top: 30px;
   }
 
   &--item {
     position: absolute;
     display: block;
-    width: 170%;
+    width: 95%;
     top: 0;
-    left: 5%;
+    left: 2.5%;
 
     @media (min-width: 984px) {
-      width: 100%;
       left: 50%;
-      top: 60%;
-      transform: translate(-50%,-50%);
+      top: 0%;
+      transform: translate(-50%,0%);
     }
   }
 }

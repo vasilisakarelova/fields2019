@@ -1,7 +1,7 @@
 {
   "name": "fields2019",
   "version": "0.1.0",
-  "homepage": ".",
+  "homepage": "http://fields.moscow",
   "dependencies": {
     "classnames": "^2.2.6",
     "css-mqpacker": "^7.0.0",

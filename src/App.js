@@ -18,6 +18,7 @@ const Artist = lazy(() => import('./components/Artist.jsx'))
 const Timeline = lazy(() => import('./components/Timeline.jsx'))
 const Education = lazy(() => import('./components/Education.jsx'))
 const Ishome = lazy(() => import('./components/Ishome.jsx'))
+const Lineup = lazy(() => import('./components/Lineup.jsx'))
 
 class App extends Component {
   state = {
@@ -67,7 +68,10 @@ class App extends Component {
     })
 
     page('/lineup', (ctx, next) => {
-      page.redirect('/#lineup')
+      this.setState({
+        route: ctx.path,
+        container: <Lineup data={data.main}/>
+      })
 
       this.openMobMenu(false)
     })
