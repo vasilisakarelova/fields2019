@@ -11,36 +11,18 @@ import data from './testdb'
 
 // const origin = window.location.origin
 //
-// fetch(`${origin}/admin/api`)
+// window.fetch(`${origin}/admin/api`)
 //   .then((response) => {
 //     if (response.status >= 400) {
 //       throw new Error("Bad response from server")
 //     }
-//     return response.text()
+//     return response.json()
 //   })
 //   .then((data) => {
-//     const dataJson = JSON.parse(data)
-//
-//     ReactDOM.render(<App data={dataJson} />, document.getElementById('root'))
+//     console.log(data)
+//     ReactDOM.render(<App data={data} />, document.getElementById('root'))
 //     unregister()
 //     resized()
-//   })
-//   .catch(error => {
-//     if (error) console.log(error)
-//     fetch(`${origin}/admin/api`)
-//       .then((response) => {
-//         if (response.status >= 400) {
-//           throw new Error("Bad response from server")
-//         }
-//         return response.text()
-//       })
-//       .then((data) => {
-//         const dataJson = JSON.parse(data)
-//
-//         ReactDOM.render(<App data={dataJson} />, document.getElementById('root'))
-//         unregister()
-//         resized()
-//       })
 //   })
 
 ReactDOM.render(<App data={data} />, document.getElementById('root'))

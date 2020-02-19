@@ -2,12 +2,12 @@
   position: relative;
   display: grid;
   padding: 0;
-  grid-template-columns: repeat(2,minmax(auto,1fr));
+  grid-template-columns: repeat(2,minmax(10px,1fr));
   grid-column-gap: 20px;
   grid-column: span 2;
 
   @media (min-width: 984px) {
-    grid-template-columns: repeat(8, minmax(auto, 1fr));
+    grid-template-columns: repeat(8, minmax(30px, 1fr));
     grid-column-gap: 30px;
     grid-column: span 8;
   }
@@ -24,7 +24,7 @@
     padding-top: calc(117px + 70px);
     display: grid;
     width: 100%;
-    grid-template-columns: repeat(8,minmax(auto,1fr));
+    grid-template-columns: repeat(8,minmax(30px,1fr));
     justify-content: space-between;
     grid-column-gap: 30px;
   }
