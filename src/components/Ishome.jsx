@@ -25,20 +25,12 @@ export default class extends Component {
           <meta property="og:title" content="Education" />
         </Helmet>
         <div className='artist-inner at-education'>
-          <div className='artist-afisha--tickets'>
-            <div className='artist-afisha--tickets-title'>Купить билеты</div>
-            <a href='https://ishome_morze.ticketscloud.org/' target='_blank' rel="noopener noreferrer">1 ноября, «Морзе», Санкт-Петербург</a>
-            <a href='https://ishome_red.ticketscloud.org/' target='_blank' rel="noopener noreferrer">3 ноября, RED, Москва</a>
+          <div className='artist-afisha--title'>
+            <div className='artist-afisha--title-main'>ISHOME</div>
+            <div className='artist-afisha--title-second'>stay home</div>
           </div>
           <div className='artist-afisha'>
-            <div className='artist-afisha--img'>
-              <img src={img01}/>
-              <div className='artist-afisha--name'>
-                <div className='artist-afisha--name-main'>ISHOME</div>
-                <div className='artist-afisha--name-second'>presents “Untitled”</div>
-                <div className='artist-afisha--name-third'>w/ Narcissi</div>
-              </div>
-            </div>
+            <iframe width="100%" height="100%" src="https://play.boomstream.com/ikhNS75t" frameBorder="0" scrolling="no" allowFullScreen></iframe>
           </div>
         </div>
       </div>

@@ -12,13 +12,10 @@
   }
 
   &.is-ishome {
-    position: fixed;
-    height: 100%;
+    min-height: 100vh;
     width: 100%;
-    background-image: url('./assets/ishome/bg.jpg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background: #111b1a;
+    color: #b08361;
 
     .artist-inner {
       padding-top: 130px;
@@ -34,14 +31,23 @@
   position: relative;
   display: block;
   width: 100%;
-  margin: 0 auto;
+  margin: 80px auto;
+  padding-top: 56.25%;
 
   @media screen and (min-width: 984px) and (max-width: 1439px) {
     grid-column: 2/8;
+    margin: 50px auto;
   }
 
   @media (min-width: 1440px) {
-    grid-column: 3/7;
+    grid-column: 2/8;
+    margin: 50px auto;
+  }
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 
   &--img {
@@ -159,6 +165,33 @@
       line-height: 32px;
       padding-top: 20px;
     }
+  }
+
+  &--title {
+    position: relative;
+    display: block;
+
+    @media screen and (min-width: 984px) and (max-width: 1439px) {
+      grid-column: span 8;
+    }
+
+    @media (min-width: 1440px) {
+      grid-column: span 8;
+    }
+  }
+
+  &--title-main {
+    font-size: 17vw;
+    line-height: 17vw;
+    letter-spacing: 5vw;
+  }
+
+  &--title-second {
+    font-size: 7vw;
+    line-height: 7vw;
+    text-transform: uppercase;
+    letter-spacing: 1.5vw;
+    text-align: center;
   }
 }
 

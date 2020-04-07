@@ -37,7 +37,11 @@ html, body {
   background: #fd060c;
   /* background: linear-gradient(75deg, #808f95, #c5ced4); */
 
-  &.at-home {
+  &.at-ishome {
+    background: #111b1a;
 
+    .header-logo-simple path {
+      fill: #b08361;
+    }
   }
 }

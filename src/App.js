@@ -139,7 +139,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className={css('base-container', {'at-home': this.state.route === '/'})}>
+      <div className={css('base-container', {'at-home': this.state.route === '/', 'at-ishome': this.state.route === '/ishome'})}>
         <Helmet>
           <meta charSet="utf-8" />
           <title>Fields</title>
