@@ -52,14 +52,14 @@ class App extends Component {
       this.openMobMenu(false)
     })
 
-    page('/ishome', (ctx, next) => {
-      this.setState({
-        route: ctx.path,
-        container: <Ishome data={data.about} />
-      })
-
-      this.openMobMenu(false)
-    })
+    // page('/ishome', (ctx, next) => {
+    //   this.setState({
+    //     route: ctx.path,
+    //     container: <Ishome data={data.about} />
+    //   })
+    //
+    //   this.openMobMenu(false)
+    // })
 
     page('/partners', (ctx, next) => {
       page.redirect('/#partners')
