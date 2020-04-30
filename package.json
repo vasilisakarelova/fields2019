@@ -6,7 +6,7 @@
     "classnames": "^2.2.6",
     "css-mqpacker": "^7.0.0",
     "fetch-retry": "^2.2.2",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "moment": "^2.24.0",
     "page": "^1.11.4",
     "postcss-cli": "^6.1.3",
