@@ -28,14 +28,6 @@ export default class extends Component {
                 </defs>
               </svg>
             </Link>
-            <div className='header-logo--date-wrap'>
-              <div className='header-logo--date-separate'>
-                <svg width="100%" height="100%" viewBox="0 0 29 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M1 55L28 1" stroke="white"/>
-                </svg>
-              </div>
-              <div className='header-logo--date'>MUTABOR<br/>15 — 16 февраля 2020</div>
-            </div>
           </div>
           <div className='header-nav'>
             <div className='header-nav--item'>
@@ -43,40 +35,6 @@ export default class extends Component {
                 <div className='header-nav--item-title'>О фестивале</div>
                 <div className='header-nav--item-sub-title'>About the festival</div>
               </Link>
-            </div>
-            <div className='header-nav--item is-mob'>
-              <Link className='header-nav--link' to='/history'>
-                <div className='header-nav--item-title'>История</div>
-              </Link>
-            </div>
-            <div className='header-nav--item'>
-              <Link className='header-nav--link' to='/lineup'>
-                <div className='header-nav--item-title'>Лайн-ап</div>
-                <div className='header-nav--item-sub-title'>Line up</div>
-              </Link>
-            </div>
-            <div className='header-nav--item is-mob'>
-              <Link className='header-nav--link' to='/history'>
-                <div className='header-nav--item-title'>Образовательная программа</div>
-              </Link>
-            </div>
-            <div className='header-nav--item'>
-              <Link className='header-nav--link' to='/timeline'>
-                <div className='header-nav--item-title'>Расписание</div>
-                <div className='header-nav--item-sub-title'>Timeline</div>
-              </Link>
-            </div>
-            <div className='header-nav--item'>
-              <Link className='header-nav--link' to='/partners'>
-                <div className='header-nav--item-title'>Партнеры</div>
-                <div className='header-nav--item-sub-title'>Partners</div>
-              </Link>
-            </div>
-            <div className='header-nav--item'>
-              <a className='header-nav--link' target='_blank' rel="noopener noreferrer" href='https://fields55.ticketscloud.org/'>
-                <div className='header-nav--item-title'>Билеты</div>
-                <div className='header-nav--item-sub-title'>Tickets</div>
-              </a>
             </div>
           </div>
           <div className='footer-mob'>

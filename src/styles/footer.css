@@ -23,17 +23,17 @@
   }
 
   &.is-splash {
-    background-position: right bottom;
+    /* background-position: right bottom;
     background-size: contain;
     background-repeat: no-repeat;
-    background-image: url('./assets/history03.png');
+    background-image: url('./assets/history03.png'); */
   }
 
   &.is-balk {
-    background-position: right bottom;
+    /* background-position: right bottom;
     background-size: contain;
     background-repeat: no-repeat;
-    background-image: url('./assets/footer-balk_2.png');
+    background-image: url('./assets/footer-balk_2.png'); */
   }
 }
 
@@ -127,6 +127,7 @@
     position: relative;
     display: flex;
     flex-direction: row;
+    justify-content: flex-end;
 
     @media (min-width: 984px) {
       width: 50%;
@@ -144,11 +145,11 @@
     }
 
     &:nth-of-type(1) {
-      padding-right: 11px;
+      /* padding-right: 11px;
 
       @media (min-width: 984px) {
         padding-right: 92px;
-      }
+      } */
     }
   }
 
