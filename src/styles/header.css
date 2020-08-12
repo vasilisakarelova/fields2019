@@ -73,7 +73,7 @@
   @media (min-width: 984px) {
     display: flex;
     align-items: center;
-    padding-left: 35px;
+    /* padding-left: 35px; */
     grid-column: span 4;
   }
 
@@ -181,7 +181,7 @@
 
     @media (min-width: 984px) {
       padding-bottom: 0px;
-      padding-right: 0px;
+      padding-right: 20px;
       width: auto;
 
       &:last-of-type {

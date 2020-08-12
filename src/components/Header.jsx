@@ -31,6 +31,18 @@ export default class extends Component {
           </div>
           <div className='header-nav'>
             <div className='header-nav--item'>
+              <Link className='header-nav--link' to='/lineup'>
+                <div className='header-nav--item-title'>Лайн-ап</div>
+                <div className='header-nav--item-sub-title'>Line up</div>
+              </Link>
+            </div>
+            <div className='header-nav--item'>
+              <Link className='header-nav--link' to='/timeline'>
+                <div className='header-nav--item-title'>Расписание</div>
+                <div className='header-nav--item-sub-title'>Timeline</div>
+              </Link>
+            </div>
+            <div className='header-nav--item'>
               <Link className='header-nav--link' to='/history'>
                 <div className='header-nav--item-title'>О фестивале</div>
                 <div className='header-nav--item-sub-title'>About the festival</div>

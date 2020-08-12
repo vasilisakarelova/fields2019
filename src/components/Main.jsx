@@ -8,8 +8,8 @@ import Link from '../helpers/Link'
 import scrollBy from '../helpers/scrollBy.js'
 import getBrowser from '../helpers/getBrowser.js'
 
-import afisha_mob from '../assets/site_mobile.png'
-import afisha_desk from '../assets/photo_2020-05-01_15-48-31.jpg'
+import afisha_mob from '../assets/DACHA_kvadrat_ins.jpg'
+import afisha_desk from '../assets/DACHA_fb_poster.jpg'
 
 import og from '../assets/og.png'
 

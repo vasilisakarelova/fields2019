@@ -7,10 +7,13 @@
   width: 100%;
 
   @media (min-width: 984px) {
-    padding: 0 60px;
-    grid-template-columns: repeat(8, minmax(30px, 1fr));
-    grid-column-gap: 30px;
-    top: 115px;
+    padding: 115px 60px 0px;
+    /* grid-template-columns: repeat(8, minmax(30px, 1fr));
+    grid-column-gap: 30px; */
+
+    display: flex;
+    align-items: center;
+    flex: 1;
   }
 }
 
@@ -149,6 +152,13 @@
     width: 100%;
     top: 0;
     left: 0;
+
+    @media (min-width: 984px) {
+      position: relative;
+      display: block;
+      grid-column: span 8;
+      height: auto;   
+    }
   }
 
   &--item {
