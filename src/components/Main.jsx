@@ -8,7 +8,7 @@ import Link from '../helpers/Link'
 import scrollBy from '../helpers/scrollBy.js'
 import getBrowser from '../helpers/getBrowser.js'
 
-import afisha_mob from '../assets/DACHA_kvadrat_ins.jpg'
+import afisha_mob from '../assets/afisha_fields_mobile.jpg'
 import afisha_desk from '../assets/DACHA_fb_poster.jpg'
 
 import og from '../assets/og.png'
@@ -90,7 +90,7 @@ export default class extends Component {
     siblings.forEach((sibling, idx) => {
       const siblingtrigger = sibling.querySelector('.main-collapsible--item__trigger')
       const isOpen = siblingtrigger.classList.contains('is-open')
-      console.log(parseInt(openingId) === idx)
+
       if (parseInt(openingId) === idx) return
       if (isOpen) {
         siblingtrigger.click()
@@ -126,6 +126,9 @@ export default class extends Component {
         </Helmet>
         <div className='main-image--wrap'>
           <img className='main-image--item' alt='afisha' src={afisha_desk} />
+        </div>
+        <div className='main-image-mob'>
+          <img className='main-image-mob--item' alt='afisha' src={afisha_mob} />
         </div>
       </div>
     )

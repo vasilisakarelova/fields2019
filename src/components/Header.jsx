@@ -31,6 +31,12 @@ export default class extends Component {
           </div>
           <div className='header-nav'>
             <div className='header-nav--item'>
+              <a className='header-nav--link is-invert' href='https://clck.ru/QDHkB'>
+                <div className='header-nav--item-title'>Билеты</div>
+                <div className='header-nav--item-sub-title'>Tickets</div>
+              </a>
+            </div>
+            <div className='header-nav--item'>
               <Link className='header-nav--link' to='/lineup'>
                 <div className='header-nav--item-title'>Лайн-ап</div>
                 <div className='header-nav--item-sub-title'>Line up</div>

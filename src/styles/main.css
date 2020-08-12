@@ -106,23 +106,13 @@
 .main-image-mob {
   position: relative;
   grid-column: span 2;
-  width: 100vw;
-  height: calc(100vh - 162px);
-  left: -20px;
+  width: 100%;
+  padding-bottom: 20px;
 
   &--item {
-    position: absolute;
+    position: relative;
     display: block;
-    top: 50%;
     width: 100%;
-    height: auto;
-    left: 50%;
-    transform: translate(-50%,-50%);
-
-    @media (min-width: 512px) {
-      height: 100%;
-      width: auto;
-    }
   }
 
   @media (min-width: 984px) {
@@ -147,6 +137,7 @@
   }
 
   &--wrap {
+    display: none;
     position: fixed;
     height: 100%;
     width: 100%;
@@ -157,7 +148,7 @@
       position: relative;
       display: block;
       grid-column: span 8;
-      height: auto;   
+      height: auto;
     }
   }
 

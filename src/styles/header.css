@@ -223,6 +223,12 @@
       height: 36px;
     }
 
+    &.is-invert {
+      @media (min-width: 984px) {
+        filter: invert(1);
+      }
+    }
+
     &:active,
     &:focus,
     &:visited {
