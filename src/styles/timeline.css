@@ -386,3 +386,14 @@
     border-bottom: 1px solid #fff;
   }
 }
+
+.timeline-image {
+  position: relative;
+  display: block;
+  width: 100%;
+  grid-column: span 2;
+
+  @media (min-width: 984px) {
+    grid-column: span 8;
+  }
+}

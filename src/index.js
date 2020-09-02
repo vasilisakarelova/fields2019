@@ -25,5 +25,5 @@ window.fetch(`${origin}/admin/api`)
   })
 
 // ReactDOM.render(<App data={data} />, document.getElementById('root'))
-// unregister()
+// register()
 // resized()

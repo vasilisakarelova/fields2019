@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet'
 import * as moment from 'moment'
 import 'moment/locale/ru'
 import og from '../assets/og.png'
+import timetable from '../assets/Timeline.png'
 
 moment.locale('ru')
 
@@ -157,6 +158,9 @@ export default class extends Component {
           <meta property="og:image" content={og} />
           <meta property="og:title" content="Timeline" />
         </Helmet>
+        <div className='timeline-inner'>
+          <img src={timetable} alt='timetile' className='timeline-image' />
+        </div>
         {/*<div className='timeline-inner'>
           <div className='timeline-header'>
             <div className='timeline-header--title'>timeline</div>
